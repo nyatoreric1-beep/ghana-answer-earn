@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#006B3F"/>
+<title>Ghana Answer & Earn — Ask, Answer, Earn to MoMo</title>
+<meta name="description" content="Ghana's trusted knowledge community. Ask questions, share answers, earn points and withdraw to MTN MoMo, Telecel Cash & AirtelTigo."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{
+colors:{brand:'#006B3F',brandDark:'#04402A',brandDeep:'#0A2A1E',brandLight:'#E7F3EC',gold:'#E9A706',goldSoft:'#FFF6D6',goldDeep:'#7A5200',ink:'#0F1E2E',muted:'#5B6B80',line:'#E5E9F0',surface:'#F4F6F9',danger:'#C8102E'},
+fontFamily:{sans:['Plus Jakarta Sans','system-ui','-apple-system','Segoe UI','Roboto','sans-serif'],display:['Sora','Plus Jakarta Sans','system-ui','sans-serif']},
+boxShadow:{card:'0 1px 3px rgba(16,24,40,.08),0 1px 2px rgba(16,24,40,.06)',pop:'0 18px 44px -12px rgba(0,0,0,.22)',lift:'0 8px 22px -8px rgba(0,107,63,.35)'}
+}}}
+</script>
+<style>
+*{ -webkit-tap-highlight-color:transparent; box-sizing:border-box; }
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;background:#F4F6F9;color:#0F1E2E;-webkit-font-smoothing:antialiased;line-height:1.5}
+.font-display{font-family:'Sora',sans-serif;letter-spacing:-.02em}
+.kente{background:linear-gradient(90deg,#C8102E 0 18%,#111 18% 20.5%,#E9A706 20.5% 38%,#006B3F 38% 54%,#111 54% 56.5%,#E9A706 56.5% 72%,#C8102E 72% 88%,#006B3F 88% 100%)}
+.kente-thin{height:4px}
+.dot-grid{background-image:radial-gradient(rgba(255,255,255,.18) 1.2px,transparent 1.2px);background-size:18px 18px}
+.dot-dark{background-image:radial-gradient(rgba(15,30,46,.09) 1.3px,transparent 1.3px);background-size:20px 20px}
+.page{display:none}.page.active{display:block;animation:fadeUp .28s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.no-scrollbar::-webkit-scrollbar{display:none}.no-scrollbar{scrollbar-width:none}
+.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;border-radius:13px;padding:12px 20px;font-size:15px;transition:.18s;cursor:pointer;border:1px solid transparent}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:#006B3F;color:#fff;box-shadow:0 8px 18px -8px rgba(0,107,63,.5)}
+.btn-primary:hover{background:#04402A}.btn-primary:disabled{opacity:.6;pointer-events:none}
+.btn-gold{background:#E9A706;color:#0F1E2E}.btn-gold:hover{background:#d49605}
+.btn-dark{background:#0F1E2E;color:#fff}.btn-dark:hover{background:#000}
+.btn-outline{background:#fff;border-color:#0F1E2E;color:#0F1E2E}.btn-outline:hover{background:#0F1E2E;color:#fff}
+.btn-soft{background:#E7F3EC;color:#04402A}.btn-soft:hover{background:#d6e9dd}
+.btn-sm{min-height:38px;padding:8px 14px;font-size:13px;border-radius:10px}
+.input{width:100%;background:#fff;border:1.5px solid #DCE2EA;border-radius:12px;padding:12px 14px;font-size:16px;font-weight:600;color:#0F1E2E;transition:.15s}
+.input:focus{border-color:#006B3F;box-shadow:0 0 0 3px rgba(0,107,63,.14);outline:none}
+.input-err{border-color:#C8102E!important;box-shadow:0 0 0 3px rgba(200,16,46,.12)!important}
+.label{font-size:11px;font-weight:800;letter-spacing:.06em;color:#5B6B80;text-transform:uppercase}
+.card{background:#fff;border:1px solid #E5E9F0;border-radius:18px;box-shadow:0 1px 3px rgba(16,24,40,.07)}
+.card-hover{transition:.2s}.card-hover:hover{transform:translateY(-2px);box-shadow:0 12px 28px -12px rgba(16,24,40,.22)}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;color:#006B3F;text-transform:uppercase}
+.section-title{font-family:'Sora',sans-serif;font-weight:800;letter-spacing:-.02em}
+.chip{white-space:nowrap;font-size:13px;font-weight:800;padding:9px 15px;border-radius:999px;background:#fff;border:1.5px solid #E5E9F0;color:#3A4A5E;cursor:pointer;transition:.15s}
+.chip.active{background:#0F1E2E;color:#fff;border-color:#0F1E2E}
+.nav-link{font-size:14.5px;font-weight:700;color:#5B6B80;padding:9px 14px;border-radius:10px;transition:.15s}
+.nav-link:hover{background:#EFF2F6;color:#0F1E2E}.nav-link.active{background:#E7F3EC;color:#04402A;font-weight:800}
+.bottom-item{color:#8A97A8}.bottom-item.active{color:#006B3F}.bottom-item.active .b-icon{background:#006B3F;color:#fff;box-shadow:0 8px 18px -6px rgba(0,107,63,.55)}
+.b-icon{width:44px;height:30px;border-radius:999px;display:flex;align-items:center;justify-content:center;transition:.18s}
+.status{font-size:11px;font-weight:800;padding:5px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:5px}
+.status i{width:6px;height:6px;border-radius:99px;display:inline-block}
+.status-Pending{background:#FEF3C7;color:#92400E}.status-Pending i{background:#D97706}
+.status-Processing{background:#DBEAFE;color:#1E40AF}.status-Processing i{background:#3B82F6}
+.status-Completed{background:#D1FAE5;color:#065F46}.status-Completed i{background:#10B981}
+.status-Failed{background:#FEE2E2;color:#991B1B}.status-Failed i{background:#EF4444}
+.status-Reversed{background:#E5E7EB;color:#374151}.status-Reversed i{background:#6B7280}
+.skeleton{position:relative;overflow:hidden;background:#E9EDF2;border-radius:12px}
+.skeleton:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);animation:sh 1.2s infinite}
+@keyframes sh{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.spinner{width:18px;height:18px;border-radius:99px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;animation:sp .7s linear infinite;display:inline-block}
+.spinner.dark{border-color:rgba(0,107,63,.2);border-top-color:#006B3F}
+@keyframes sp{to{transform:rotate(360deg)}}
+.modal-bg{background:rgba(10,20,35,.58);backdrop-filter:blur(6px)}
+.drawer{transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.toast-in{animation:tin .3s ease}
+@keyframes tin{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.floating{animation:flt 4.2s ease-in-out infinite}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.progress-anim{transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.quiz-opt{border:1.5px solid #E5E9F0;background:#fff;border-radius:14px;padding:14px;text-align:left;font-weight:700;font-size:15px;transition:.15s;cursor:pointer;width:100%}
+.quiz-opt:hover{border-color:#006B3F}.quiz-opt.selected{border-color:#006B3F;background:#E7F3EC}
+.quiz-opt.correct{border-color:#10B981;background:#D1FAE5}.quiz-opt.wrong{border-color:#EF4444;background:#FEE2E2}
+.earn-tab{transition:.15s}.earn-tab.on{background:#0F1E2E!important;color:#fff!important;border-color:#0F1E2E!important}
+.adm-tab.on{background:#0F1E2E!important;color:#fff!important}
+.txf.on{background:#0F1E2E!important;color:#fff!important}
+.sheet-handle{width:44px;height:5px;border-radius:99px;background:#E5E9F0;margin:0 auto 12px}
+.check-pop{animation:pop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
+.bar{height:10px;border-radius:99px;background:#EDF0F4;overflow:hidden}.bar>div{height:100%;border-radius:99px}
+.avatar{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;flex-shrink:0}
+.divider{height:1px;background:#EDEFF3}
+input[type=range]{accent-color:#006B3F}
+:focus-visible{outline:2px solid #006B3F;outline-offset:2px}
+@media(max-width:768px){.pb-safe{padding-bottom:96px} .btn{font-size:15px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+table th{font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.qcard{transition:.18s}.qcard:hover{border-color:#B9D4C3}
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- SVG ICON SPRITE -->
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6h-6v6H4a1 1 0 01-1-1z"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9.5 9.5a2.5 2.5 0 015 .2c0 1.7-2.5 2-2.5 3.3"/><circle cx="12" cy="17" r="1.2" fill="currentColor"/></symbol>
+<symbol id="i-trophy" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 4h8v5a4 4 0 01-8 0V4zM8 5H4a3 3 0 003 5M16 5h4a3 3 0 01-3 5M12 13v4M8 21h8M10 17h4"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M3 10h18M16 15h2"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 21c1.5-4 5-5.5 8-5.5s6.5 1.5 8 5.5"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6M10 20a2 2 0 004 0"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M4 12.5l5 5L20 6.5"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></symbol>
+<symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2L4 14h6l-1 8 9-12h-6z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 20l-3.5-3.5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="M8 11V8a4 4 0 018 0v3"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs></svg>
+
+<!-- TRUST TOP BAR -->
+<div class="bg-ink text-white">
+<div class="max-w-7xl mx-auto px-4 flex items-center justify-between gap-3 py-2">
+<div class="flex items-center gap-2 text-[11px] md:text-xs font-semibold min-w-0">
+<svg class="w-4 h-4 text-gold shrink-0"><use href="#i-shield"/></svg>
+<span class="truncate">Verified members • Transparent points • MoMo payouts</span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="hidden sm:inline text-[11px] text-white/60 font-medium">Rewards for qualifying activity only</span>
+<span class="bg-gold text-ink text-[10px] font-extrabold px-2 py-0.5 rounded-full tracking-wide">DEMO</span>
+</div>
+</div>
+</div>
+<div class="kente kente-thin"></div>
+
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-line">
+<div class="max-w-7xl mx-auto px-4">
+<div class="flex items-center justify-between h-[64px] md:h-[70px] gap-2">
+<button onclick="go('home')" class="flex items-center gap-2.5 text-left shrink-0" aria-label="Home">
+<div class="relative w-10 h-10 rounded-xl overflow-hidden shadow-card border border-black/10 flex-shrink-0">
+<div class="absolute inset-0 flex flex-col"><div class="flex-1" style="background:#C8102E"></div><div class="flex-1" style="background:#E9A706"></div><div class="flex-1" style="background:#006B3F"></div></div>
+<div class="absolute inset-0 flex items-center justify-center"><svg class="w-5 h-5 text-black drop-shadow"><use href="#i-star"/></svg></div>
+</div>
+<div class="leading-tight">
+<div class="font-display font-extrabold text-[15px] md:text-[17px] tracking-tight">Ghana Answer <span class="text-brand">&</span> Earn</div>
+<div class="text-[10.5px] text-muted font-semibold hidden sm:block">Knowledge • Rewards • MoMo</div>
+</div>
+</button>
+<nav class="hidden lg:flex items-center gap-1">
+<a href="#" data-nav="home" onclick="go('home');return false;" class="nav-link active">Home</a>
+<a href="#" data-nav="questions" onclick="go('questions');return false;" class="nav-link">Questions</a>
+<a href="#" data-nav="ask" onclick="go('ask');return false;" class="nav-link">Ask</a>
+<a href="#" data-nav="earn" onclick="go('earn');return false;" class="nav-link">Earn</a>
+<a href="#" data-nav="wallet" onclick="go('wallet');return false;" class="nav-link">Wallet</a>
+<a href="#" data-nav="profile" onclick="go('profile');return false;" class="nav-link">Profile</a>
+</nav>
+<div class="flex items-center gap-2">
+<div id="walletPill" class="hidden md:flex items-center gap-2 bg-surface border border-line rounded-full pl-4 pr-1 py-1 cursor-pointer hover:border-brand/40 transition" onclick="go('wallet')">
+<div class="leading-none"><div class="text-[10px] font-bold text-muted">BALANCE</div><div class="text-[13px] font-extrabold">GH₵ <span id="walletPillAmt">0.00</span></div></div>
+<span class="bg-brand text-white text-[12px] font-bold px-4 py-2 rounded-full">Wallet</span>
+</div>
+<button onclick="toggleNotifs(true)" class="relative w-11 h-11 rounded-full bg-surface border border-line flex items-center justify-center hover:bg-gray-100 transition" aria-label="Notifications">
+<svg class="w-5 h-5 text-ink"><use href="#i-bell"/></svg>
+<span id="notifBadge" class="hidden absolute -top-1 -right-1 bg-danger text-white text-[10px] font-extrabold min-w-[20px] h-5 px-1 rounded-full items-center justify-center flex">0</span>
+</button>
+<div id="authBtns" class="flex items-center gap-2">
+<button onclick="openAuth('login')" class="hidden sm:block text-sm font-bold px-4 py-2.5 rounded-full hover:bg-surface">Log in</button>
+<button onclick="openAuth('register')" class="bg-ink text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-black shadow-card" style="min-height:44px">Join Free</button>
+</div>
+<div id="userChip" class="hidden items-center gap-2 cursor-pointer bg-surface border border-line rounded-full pl-1 pr-3 py-1" onclick="go('profile')">
+<div id="userAvatar" class="w-9 h-9 rounded-full flex items-center justify-center font-extrabold text-white text-sm">A</div>
+<div class="hidden md:block leading-tight"><div id="userChipName" class="text-[13px] font-extrabold">User</div><div id="userChipPts" class="text-[11px] text-brand font-bold">0 pts</div></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 pb-safe md:pb-10">
+
+<!-- ============ HOME ============ -->
+<section id="page-home" class="page active">
+<!-- HERO -->
+<div class="mt-4 card overflow-hidden !rounded-[22px]">
+<div class="grid lg:grid-cols-[1.05fr_.95fr]">
+<div class="p-6 md:p-10">
+<div class="inline-flex items-center gap-2 bg-brandLight border border-brand/15 rounded-full pl-2 pr-3 py-1.5">
+<span class="bg-brand text-white text-[10px] font-extrabold px-2 py-[3px] rounded-full tracking-wide flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>LIVE</span>
+<span class="text-[12px] font-bold text-brandDark">12,400+ members • All 16 regions</span>
+</div>
+<h1 class="font-display font-extrabold text-[32px] leading-[1.06] md:text-[52px] mt-4 tracking-tight">Ask questions.<br/>Share answers.<br/><span class="text-brand">Earn to MoMo.</span></h1>
+<p class="text-muted mt-4 text-[15px] md:text-[17px] leading-relaxed max-w-lg">From BECE maths to business, farming to Ghana Card — get trusted help from real Ghanaians. Earn points for quality contributions and withdraw to <strong class="text-ink">MTN MoMo, Telecel Cash & AirtelTigo.</strong></p>
+<div class="flex flex-col sm:flex-row gap-3 mt-6">
+<button onclick="go('questions')" class="btn btn-primary flex-1 sm:flex-none sm:px-8">Start Answering <svg class="w-5 h-5"><use href="#i-arrow"/></svg></button>
+<button onclick="go('ask')" class="btn btn-outline flex-1 sm:flex-none sm:px-8">Ask a Question</button>
+</div>
+<div class="flex items-center gap-3 mt-6">
+<div class="flex -space-x-2.5">
+<div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-[11px] font-extrabold" style="background:#C8102E">KA</div>
+<div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-[11px] font-extrabold" style="background:#006B3F">AS</div>
+<div class="w-9 h-9 rounded-full border-2 border-white flex items-center justify-center text-white text-[11px] font-extrabold" style="background:#E9A706">YD</div>
+<div class="w-9 h-9 rounded-full border-2 border-white bg-ink flex items-center justify-center text-white text-[10px] font-extrabold">9k+</div>
+</div>
+<div class="text-xs md:text-sm"><div class="flex items-center gap-1 font-extrabold"><span class="flex text-gold"><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg><svg class="w-4 h-4"><use href="#i-star"/></svg></span> 4.8/5</div><div class="text-muted font-medium">2,300+ reviews • Verified community</div></div>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-6 max-w-md">
+<div class="bg-surface border border-line rounded-2xl p-3 text-center"><div class="font-display font-extrabold text-lg">48k+</div><div class="text-[11px] text-muted font-bold">Answers shared</div></div>
+<div class="bg-surface border border-line rounded-2xl p-3 text-center"><div class="font-display font-extrabold text-lg text-brand">GH₵92k</div><div class="text-[11px] text-muted font-bold">Rewards paid*</div></div>
+<div class="bg-surface border border-line rounded-2xl p-3 text-center"><div class="font-display font-extrabold text-lg">13</div><div class="text-[11px] text-muted font-bold">Categories</div></div>
+</div>
+<p class="text-[11px] text-muted mt-3">*Demo figures. Rewards depend on qualifying activity & verification.</p>
+</div>
+<div class="relative p-6 md:p-8 text-white overflow-hidden" style="background:linear-gradient(150deg,#0B1F16 0%,#0A3D26 55%,#04402A 100%)">
+<div class="absolute inset-0 dot-grid opacity-30"></div>
+<div class="relative">
+<div class="bg-white text-ink rounded-2xl p-5 shadow-pop">
+<div class="flex items-center justify-between"><span class="label">Available balance</span><span class="status status-Completed"><i></i>Verified</span></div>
+<div class="font-display font-extrabold text-[38px] leading-none mt-1">GH₵ 86.50</div>
+<div class="flex flex-wrap gap-2 mt-3"><span class="bg-goldSoft border border-gold/30 text-goldDeep text-[11px] font-extrabold px-2.5 py-1 rounded-full">Pending: GH₵32.00</span><span class="bg-brandLight text-brandDark text-[11px] font-extrabold px-2.5 py-1 rounded-full">★ 2,370 pts</span></div>
+<div class="mt-4 space-y-2">
+<div class="bg-surface border border-line rounded-xl p-3 flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-brand text-white flex items-center justify-center shrink-0"><svg class="w-5 h-5"><use href="#i-check"/></svg></span><div class="min-w-0"><div class="text-[11px] font-extrabold text-brand">ACCEPTED ANSWER +20 PTS</div><div class="text-[13px] font-bold truncate">Who were the Big Six?</div></div></div>
+<div class="bg-surface border border-line rounded-xl p-3"><div class="flex justify-between text-[11px] font-extrabold"><span class="text-muted">DAILY CHALLENGE</span><span>4/5</span></div><div class="bar mt-2"><div class="bg-gold" style="width:80%"></div></div></div>
+</div>
+<button onclick="go('wallet')" class="btn btn-gold w-full mt-4 !min-h-[48px]">Withdraw to MoMo</button>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3">
+<div class="bg-white/10 border border-white/15 backdrop-blur rounded-2xl p-3 floating"><div class="text-[11px] font-bold text-white/60">TODAY'S QUIZ</div><div class="font-extrabold text-sm mt-0.5">Ghana History</div><button onclick="go('challenge')" class="mt-2 bg-gold text-ink text-xs font-extrabold px-3 py-2 rounded-full w-full">Play • +25 pts</button></div>
+<div class="bg-white/10 border border-white/15 backdrop-blur rounded-2xl p-3"><div class="text-[11px] font-bold text-white/60">PAYOUTS VIA</div><div class="flex flex-wrap gap-1.5 mt-2"><span class="bg-[#FFCC00] text-black text-[10px] font-extrabold px-2 py-1 rounded-md">MTN</span><span class="bg-[#E30613] text-white text-[10px] font-extrabold px-2 py-1 rounded-md">Telecel</span><span class="bg-[#0047BB] text-white text-[10px] font-extrabold px-2 py-1 rounded-md">AT</span></div><div class="text-[11px] text-white/60 mt-2 font-semibold">Min GH₵50 • Max GH₵200/day</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MOMO STRIP -->
+<div class="mt-3 card px-4 py-3.5 flex flex-wrap items-center justify-center md:justify-between gap-3">
+<div class="flex items-center gap-2.5"><span class="w-10 h-10 rounded-xl bg-brandLight flex items-center justify-center"><svg class="w-5 h-5 text-brand"><use href="#i-wallet"/></svg></span><div><div class="text-sm font-extrabold">Mobile Money withdrawals</div><div class="text-[12px] text-muted font-medium">Min GH₵50 • Max GH₵200/day • Verified numbers only</div></div></div>
+<div class="flex items-center gap-2"><span class="bg-[#FFCC00] text-black text-[11px] font-extrabold px-3 py-1.5 rounded-full border border-black/10">MTN MoMo</span><span class="bg-[#E30613] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full">Telecel Cash</span><span class="bg-[#0047BB] text-white text-[11px] font-extrabold px-3 py-1.5 rounded-full">AirtelTigo</span></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="mt-10">
+<div class="text-center"><div class="eyebrow">How it works</div><h2 class="section-title text-2xl md:text-[34px] mt-1">From knowledge to MoMo in 4 steps</h2><p class="text-muted text-sm md:text-base mt-2">No hidden rules. Just helpful answers.</p></div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+<div class="card p-5 card-hover relative"><span class="absolute top-4 right-4 text-[11px] font-extrabold bg-surface border border-line px-2 py-0.5 rounded-full text-muted">01</span><div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-2xl">📝</div><h3 class="font-extrabold mt-3">Create account</h3><p class="text-[13px] text-muted mt-1">Free registration + phone verification. Takes 2 minutes.</p></div>
+<div class="card p-5 card-hover relative"><span class="absolute top-4 right-4 text-[11px] font-extrabold bg-surface border border-line px-2 py-0.5 rounded-full text-muted">02</span><div class="w-12 h-12 rounded-2xl bg-goldSoft border border-gold/20 flex items-center justify-center text-2xl">💡</div><h3 class="font-extrabold mt-3">Answer & help</h3><p class="text-[13px] text-muted mt-1">Share quality answers. Earn +5 pts for each helpful one.</p></div>
+<div class="card p-5 card-hover relative"><span class="absolute top-4 right-4 text-[11px] font-extrabold bg-surface border border-line px-2 py-0.5 rounded-full text-muted">03</span><div class="w-12 h-12 rounded-2xl bg-brandLight border border-brand/15 flex items-center justify-center text-2xl">🏆</div><h3 class="font-extrabold mt-3">Earn bonuses</h3><p class="text-[13px] text-muted mt-1">Accepted +20, quality +10, daily quiz +25, referrals +50.</p></div>
+<div class="card p-5 card-hover relative"><span class="absolute top-4 right-4 text-[11px] font-extrabold bg-surface border border-line px-2 py-0.5 rounded-full text-muted">04</span><div class="w-12 h-12 rounded-2xl bg-red-50 border border-red-100 flex items-center justify-center text-2xl">💰</div><h3 class="font-extrabold mt-3">Withdraw</h3><p class="text-[13px] text-muted mt-1">Cash out GH₵50+ to MoMo after verification & review.</p></div>
+</div>
+<div class="mt-3 bg-goldSoft border border-gold/30 rounded-2xl p-4 text-[13px] text-[#5A4500] flex gap-2.5"><span class="font-bold">◉</span><span><strong>Transparent conversion:</strong> 20 points = GH₵1.00. Points move from <strong>Pending → Available</strong> after quality check (24–48hrs). Only Available balance can be withdrawn.</span></div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="mt-10">
+<div class="flex items-end justify-between"><div><div class="eyebrow">Categories</div><h2 class="section-title text-2xl md:text-3xl">Explore topics</h2></div><button onclick="go('questions')" class="text-sm font-bold text-brand">View all →</button></div>
+<div id="homeCats" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 mt-4"></div>
+</div>
+
+<!-- FEATURED -->
+<div class="mt-10">
+<div class="flex items-end justify-between"><div><div class="eyebrow">Featured</div><h2 class="section-title text-2xl md:text-3xl">Trending questions</h2></div><button onclick="go('questions')" class="text-sm font-bold text-brand">See all →</button></div>
+<div id="featuredList" class="grid md:grid-cols-2 gap-3 mt-4"></div>
+</div>
+
+<!-- DAILY CHALLENGE -->
+<div class="mt-10 rounded-[22px] p-6 md:p-10 text-white relative overflow-hidden shadow-pop" style="background:linear-gradient(135deg,#0B1F16,#04402A 60%,#0A3D26)">
+<div class="absolute inset-0 dot-grid opacity-20"></div>
+<div class="grid md:grid-cols-2 gap-6 items-center relative">
+<div>
+<div class="inline-flex items-center gap-2 bg-gold text-ink text-xs font-extrabold px-3 py-1.5 rounded-full"><svg class="w-4 h-4"><use href="#i-bolt"/></svg> DAILY CHALLENGE • +25 POINTS</div>
+<h3 class="font-display font-extrabold text-2xl md:text-[34px] mt-3 leading-tight">Today: Independence & Culture Quiz</h3>
+<p class="text-white/70 text-sm md:text-base mt-2">5 quick questions. Score 3+ to earn <strong class="text-gold">+25 pts (≈ GH₵1.25)</strong>. Fresh challenge every midnight GMT.</p>
+<div class="flex items-center gap-3 mt-4"><div class="flex-1 bar !bg-white/20"><div id="homeChallengeBar" class="bg-gold progress-anim" style="width:0%"></div></div><span id="homeChallengeTxt" class="text-xs font-bold whitespace-nowrap">0/5 done</span></div>
+<div class="flex flex-col sm:flex-row gap-3 mt-5"><button onclick="go('challenge')" class="btn btn-gold">Start Challenge →</button><button onclick="go('earn')" class="btn border !border-white/30 !text-white hover:!bg-white/10">How rewards work</button></div>
+</div>
+<div class="hidden md:grid grid-cols-2 gap-3">
+<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10"><div class="text-3xl">🇬🇭</div><div class="font-bold text-sm mt-2">Independence 1957</div><div class="text-xs text-white/60">Big Six • Nkrumah</div></div>
+<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10"><div class="text-3xl">🥘</div><div class="font-bold text-sm mt-2">Culture & Food</div><div class="text-xs text-white/60">Adinkra • Kente</div></div>
+<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10"><div class="text-3xl">🌍</div><div class="font-bold text-sm mt-2">Geography</div><div class="text-xs text-white/60">Lake Volta • Regions</div></div>
+<div class="bg-white/10 backdrop-blur rounded-2xl p-4 border border-white/10"><div class="text-3xl">💱</div><div class="font-bold text-sm mt-2">Civics & Money</div><div class="text-xs text-white/60">Cedi • Ghana Card</div></div>
+</div>
+</div>
+</div>
+
+<!-- LEADERBOARD + WITHDRAW -->
+<div class="grid lg:grid-cols-2 gap-4 mt-10">
+<div class="card p-5 md:p-6">
+<div class="flex items-center justify-between"><h3 class="font-display font-extrabold text-xl">Top Answerers</h3><button onclick="go('earn');switchEarnTab('board')" class="text-sm font-bold text-brand">Full board →</button></div>
+<div class="flex gap-2 mt-3"><button id="lbW1" onclick="renderHomeBoard('weekly')" class="text-xs font-extrabold px-4 py-2 rounded-full bg-ink text-white">Weekly</button><button id="lbM1" onclick="renderHomeBoard('monthly')" class="text-xs font-extrabold px-4 py-2 rounded-full bg-surface border border-line">Monthly</button><span class="ml-auto text-[10px] bg-goldSoft text-goldDeep px-2 py-1 rounded-full font-bold self-center">DEMO</span></div>
+<div id="homeBoard" class="mt-3 space-y-2"></div>
+</div>
+<div class="rounded-[18px] p-5 md:p-6 border border-gold/40 shadow-card relative overflow-hidden" style="background:linear-gradient(180deg,#FFFBEB,#FFF3C4)">
+<div class="eyebrow !text-goldDeep">Mobile Money withdrawals</div>
+<h3 class="font-display font-extrabold text-2xl mt-1">Cash out straight to MoMo</h3>
+<div class="grid grid-cols-2 gap-2 mt-4">
+<div class="bg-white rounded-2xl p-3 border border-line"><div class="text-[11px] font-bold text-muted">MINIMUM</div><div class="font-display font-extrabold text-xl">GH₵50</div></div>
+<div class="bg-white rounded-2xl p-3 border border-line"><div class="text-[11px] font-bold text-muted">DAILY MAX</div><div class="font-display font-extrabold text-xl">GH₵200</div></div>
+</div>
+<ul class="text-sm mt-4 space-y-2 text-gray-700 font-medium">
+<li class="flex gap-2"><span class="text-brand font-bold">✓</span> Verified phone + Available balance only</li>
+<li class="flex gap-2"><span class="text-brand font-bold">✓</span> Live tracking: Pending → Processing → Completed</li>
+<li class="flex gap-2"><span class="text-brand font-bold">✓</span> Networks managed by admin for safety</li>
+</ul>
+<button onclick="go('wallet')" class="btn btn-dark w-full mt-4">Open My Wallet</button>
+<p class="text-[11px] text-[#7A5A00] mt-3 leading-snug">🔒 Real transfers require a licensed payment provider (e.g. MTN MoMo API, Hubtel). This demo simulates the flow — no real money moves.</p>
+</div>
+</div>
+
+<!-- TRUST -->
+<div class="mt-10">
+<div class="text-center"><div class="eyebrow">Trust & Safety</div><h2 class="section-title text-2xl md:text-3xl">Safe for students & adults</h2></div>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-5">
+<div class="card p-5 text-center"><div class="w-12 h-12 mx-auto rounded-2xl bg-brandLight flex items-center justify-center"><svg class="w-6 h-6 text-brand"><use href="#i-shield"/></svg></div><div class="font-extrabold text-sm mt-3">Verified & Moderated</div><div class="text-xs text-muted mt-1">Reports reviewed, spam blocked, rate limits.</div></div>
+<div class="card p-5 text-center"><div class="w-12 h-12 mx-auto rounded-2xl bg-red-50 flex items-center justify-center text-2xl">📵</div><div class="font-extrabold text-sm mt-3">Anti-Fraud</div><div class="text-xs text-muted mt-1">No self-referrals, fake accounts suspended.</div></div>
+<div class="card p-5 text-center"><div class="w-12 h-12 mx-auto rounded-2xl bg-blue-50 flex items-center justify-center"><svg class="w-6 h-6 text-blue-700"><use href="#i-lock"/></svg></div><div class="font-extrabold text-sm mt-3">Data Protected</div><div class="text-xs text-muted mt-1">Privacy controls, secure auth, OTP verify.</div></div>
+<div class="card p-5 text-center"><div class="w-12 h-12 mx-auto rounded-2xl bg-goldSoft flex items-center justify-center text-2xl">⚖️</div><div class="font-extrabold text-sm mt-3">Fair Rules</div><div class="text-xs text-muted mt-1">Clear guidelines, appeals, records.</div></div>
+</div>
+<div class="mt-4 card !border-l-4 !border-l-danger p-4 text-[13px] text-gray-600"><strong>Important:</strong> Ghana Answer & Earn is a knowledge-sharing community with rewards for qualifying helpful activity — <strong>not guaranteed income or employment.</strong> Rewards depend on quality, acceptance & verification.</div>
+</div>
+
+<!-- CTA -->
+<div class="mt-10 mb-4 bg-ink text-white rounded-[22px] p-8 md:p-12 text-center relative overflow-hidden">
+<div class="kente absolute top-0 left-0 right-0 h-1.5"></div>
+<div class="absolute inset-0 dot-grid opacity-10"></div>
+<div class="relative">
+<h2 class="font-display font-extrabold text-2xl md:text-4xl">Ready to Answer Ghana? 🇬🇭</h2>
+<p class="text-white/70 mt-2 text-sm md:text-base">Join free today. Get <strong class="text-gold">+10 welcome points</strong> and start your streak.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-3 mt-6 max-w-md mx-auto"><button onclick="openAuth('register')" class="btn btn-gold flex-1">Create Free Account</button><button onclick="loginDemo()" class="btn border !border-white/30 !text-white flex-1">Try Demo Account</button></div>
+<div class="text-[11px] text-white/40 mt-4">Free forever • No card required • 2-minute setup</div>
+</div>
+</div>
+</section>
+
+<!-- ============ QUESTIONS ============ -->
+<section id="page-questions" class="page">
+<div class="mt-4 md:mt-6">
+<div class="flex flex-col md:flex-row md:items-center gap-3">
+<div class="flex-1"><h1 class="font-display font-extrabold text-2xl md:text-3xl">Browse Questions</h1><p class="text-sm text-muted">Help others • Earn +5 pts per answer <span class="bg-goldSoft text-goldDeep text-[10px] font-bold px-2 py-0.5 rounded-full ml-1">DEMO DATA</span></p></div>
+<button onclick="go('ask')" class="btn btn-primary !min-h-[46px] shrink-0">+ Ask Question</button>
+</div>
+<div class="mt-4 flex flex-col sm:flex-row gap-2">
+<div class="flex-1 relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><svg class="w-5 h-5"><use href="#i-search"/></svg></span><input id="qSearch" oninput="renderQuestions()" placeholder="Search: BECE? Ghana Card? Farming? Jollof?" class="input !pl-11 !rounded-2xl shadow-card"/></div>
+<select id="qSort" onchange="renderQuestions()" class="input sm:w-[170px] !font-bold shadow-card"><option value="recent">Newest</option><option value="popular">Most answered</option><option value="unanswered">Unanswered</option></select>
+</div>
+<div id="catChips" class="flex gap-2 overflow-x-auto no-scrollbar mt-3 pb-1"></div>
+<div id="qCount" class="text-xs font-bold text-muted mt-3"></div>
+<div id="qList" class="grid md:grid-cols-2 gap-3 mt-2"></div>
+</div>
+</section>
+
+<!-- ============ ASK ============ -->
+<section id="page-ask" class="page">
+<div class="mt-4 md:mt-6 grid lg:grid-cols-3 gap-4">
+<div class="lg:col-span-2 card p-5 md:p-8">
+<h1 class="font-display font-extrabold text-2xl md:text-3xl">Ask a Question</h1>
+<p class="text-sm text-muted mt-1">Clear questions get faster, better answers.</p>
+<div class="mt-5 space-y-4">
+<div><label class="label">Question title *</label><input id="askTitle" maxlength="140" oninput="document.getElementById('askCount').textContent=this.value.length" placeholder="e.g. How do I calculate profit margin for my provision shop?" class="input mt-1.5"/><div class="text-[11px] text-muted text-right mt-1"><span id="askCount">0</span>/140 • Min 10 characters</div></div>
+<div class="grid md:grid-cols-2 gap-3">
+<div><label class="label">Category *</label><select id="askCat" class="input mt-1.5 !font-bold"></select></div>
+<div><label class="label">Tags (comma separated)</label><input id="askTags" placeholder="business, maths, shs" class="input mt-1.5"/></div>
+</div>
+<div><label class="label">Details *</label><textarea id="askDetails" rows="5" placeholder="Add context: what have you tried? What level (JHS/SHS/Uni/Business)? Be specific..." class="input mt-1.5"></textarea><div class="text-[11px] text-muted mt-1">Min 20 characters • One question per post</div></div>
+<div class="bg-goldSoft border border-gold/30 rounded-2xl p-3.5 text-[13px] text-[#5A4500]">💡 <strong>Tips:</strong> Be specific • No phone numbers in public • Be respectful • You can <strong>Accept</strong> the best answer (+20 pts to helper).</div>
+<button id="askBtn" onclick="submitQuestion()" class="btn btn-primary w-full">Post Question →</button>
+<p class="text-[11px] text-muted text-center">Limit: 10 questions/day • Spam is removed & may suspend account</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="bg-ink text-white rounded-[18px] p-5"><h3 class="font-extrabold">✨ Good vs Bad</h3><div class="mt-3 space-y-2 text-[13px]"><div class="bg-white/10 rounded-xl p-3"><span class="text-green-300 font-bold">✓ GOOD:</span> "How do I solve 2x+3=11? I tried subtracting 3 but stuck..."</div><div class="bg-white/10 rounded-xl p-3"><span class="text-red-300 font-bold">✗ BAD:</span> "Help me pls urgent!!!"</div></div></div>
+<div class="card p-5"><h3 class="font-extrabold text-sm">📊 Your asking stats</h3><div id="askStats" class="mt-2 text-sm text-muted">Log in to track your questions.</div></div>
+<div class="card p-5 !bg-brandLight/50 !border-brand/20"><div class="font-extrabold text-sm">🤝 Community Guidelines</div><ul class="text-[13px] mt-2 space-y-1 text-gray-600 font-medium"><li>• Be kind, no insults or tribalism</li><li>• No exam malpractice / leak requests</li><li>• No scams, betting spam, or ads</li><li>• Report abuse — moderators act fast</li></ul><button onclick="openInfo('guidelines')" class="text-brand font-bold text-[13px] mt-2">Read full guidelines →</button></div>
+</div>
+</div>
+</section>
+
+<!-- ============ EARN ============ -->
+<section id="page-earn" class="page">
+<div class="mt-4 md:mt-6">
+<h1 class="font-display font-extrabold text-2xl md:text-3xl">Earn Rewards 🏆</h1>
+<p class="text-sm text-muted">Transparent points • Real MoMo withdrawals • No hidden rules</p>
+<div class="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-1">
+<button data-earn="rewards" onclick="switchEarnTab('rewards')" class="earn-tab on whitespace-nowrap text-sm font-extrabold px-5 py-2.5 rounded-full bg-white border border-line">💰 Rewards</button>
+<button data-earn="challenge" onclick="switchEarnTab('challenge')" class="earn-tab whitespace-nowrap text-sm font-extrabold px-5 py-2.5 rounded-full bg-white border border-line">⚡ Daily Challenge</button>
+<button data-earn="board" onclick="switchEarnTab('board')" class="earn-tab whitespace-nowrap text-sm font-extrabold px-5 py-2.5 rounded-full bg-white border border-line">🏆 Leaderboard</button>
+<button data-earn="badges" onclick="switchEarnTab('badges')" class="earn-tab whitespace-nowrap text-sm font-extrabold px-5 py-2.5 rounded-full bg-white border border-line">🎖️ Badges</button>
+<button data-earn="refer" onclick="switchEarnTab('refer')" class="earn-tab whitespace-nowrap text-sm font-extrabold px-5 py-2.5 rounded-full bg-white border border-line">👥 Refer & Earn</button>
+</div>
+<div id="earn-rewards" class="earn-panel mt-4 grid lg:grid-cols-3 gap-4">
+<div class="lg:col-span-2 space-y-4">
+<div class="card p-5 md:p-6"><h3 class="font-display font-extrabold text-lg">Points system — exactly how you earn</h3>
+<div class="mt-4 space-y-2">
+<div class="flex items-center justify-between bg-surface border border-line rounded-2xl p-4"><div class="flex items-center gap-3"><span class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center text-xl shrink-0">💬</span><div><div class="font-extrabold text-sm">Answer a question</div><div class="text-xs text-muted">Min. 20 characters, helpful & on-topic</div></div></div><span class="font-display font-extrabold text-brand whitespace-nowrap ml-2">+5 pts</span></div>
+<div class="flex items-center justify-between bg-surface border border-line rounded-2xl p-4"><div class="flex items-center gap-3"><span class="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center text-xl shrink-0">⭐</span><div><div class="font-extrabold text-sm">High-quality bonus</div><div class="text-xs text-muted">5+ upvotes or moderator pick</div></div></div><span class="font-display font-extrabold text-brand whitespace-nowrap ml-2">+10 pts</span></div>
+<div class="flex items-center justify-between bg-brandLight border border-brand/20 rounded-2xl p-4"><div class="flex items-center gap-3"><span class="w-11 h-11 rounded-xl bg-brand text-white flex items-center justify-center text-xl shrink-0">✓</span><div><div class="font-extrabold text-sm">Accepted answer</div><div class="text-xs text-muted">Asker marks your answer as best</div></div></div><span class="font-display font-extrabold text-brand whitespace-nowrap ml-2">+20 pts</span></div>
+<div class="flex items-center justify-between bg-goldSoft border border-gold/30 rounded-2xl p-4"><div class="flex items-center gap-3"><span class="w-11 h-11 rounded-xl bg-gold flex items-center justify-center text-xl shrink-0">⚡</span><div><div class="font-extrabold text-sm">Daily challenge</div><div class="text-xs text-muted">Score 3/5 or more • Once per day</div></div></div><span class="font-display font-extrabold text-goldDeep whitespace-nowrap ml-2">+25 pts</span></div>
+<div class="flex items-center justify-between bg-surface border border-line rounded-2xl p-4"><div class="flex items-center gap-3"><span class="w-11 h-11 rounded-xl bg-pink-100 flex items-center justify-center text-xl shrink-0">👥</span><div><div class="font-extrabold text-sm">Successful referral</div><div class="text-xs text-muted">Friend verifies phone + earns 50 pts</div></div></div><span class="font-display font-extrabold text-brand whitespace-nowrap ml-2">+50 pts</span></div>
+</div></div>
+<div class="card p-5 md:p-6"><h3 class="font-display font-extrabold text-lg">🧮 Points → Cedis calculator</h3><p class="text-xs text-muted mt-1">Rate: <strong>20 pts = GH₵1.00</strong> (1 pt = GH₵0.05). Provider fees may apply at payout.</p>
+<div class="mt-4 flex items-center gap-3"><input id="calcPts" type="number" value="1000" oninput="calcConvert()" class="input !font-extrabold"/><span class="font-bold text-gray-400">=</span><div class="flex-1 bg-brand text-white rounded-xl px-4 py-3 font-display font-extrabold text-center" id="calcGH">GH₵50.00</div></div>
+<input id="calcSlider" type="range" min="0" max="5000" value="1000" oninput="document.getElementById('calcPts').value=this.value;calcConvert()" class="w-full mt-3"/>
+<div class="grid grid-cols-3 gap-2 mt-4 text-center text-xs"><div class="bg-surface border border-line rounded-xl p-2"><strong>100 pts</strong><br/><span class="text-brand font-bold">GH₵5</span></div><div class="bg-surface border border-line rounded-xl p-2"><strong>1,000 pts</strong><br/><span class="text-brand font-bold">GH₵50 min</span></div><div class="bg-surface border border-line rounded-xl p-2"><strong>4,000 pts</strong><br/><span class="text-brand font-bold">GH₵200 max</span></div></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-ink text-white rounded-[18px] p-5 shadow-card"><div class="text-[11px] font-bold opacity-70 tracking-widest">YOUR EARNING POWER</div><div id="earnMyPts" class="font-display font-extrabold text-3xl mt-1">0 pts</div><div id="earnMyGH" class="text-gold font-bold text-sm">≈ GH₵0.00 available</div><div class="bar !bg-white/20 mt-3"><div id="earnNextBar" class="bg-gold" style="width:5%"></div></div><div id="earnNextTxt" class="text-[11px] opacity-70 mt-1.5">Earn to reach GH₵50 minimum</div><button onclick="go('questions')" class="btn btn-gold w-full mt-4 !text-sm">Answer & Earn Now</button></div>
+<div class="bg-goldSoft border border-gold/30 rounded-[18px] p-5 text-[13px] leading-relaxed text-[#5A4500]"><strong>⚠️ Honest note:</strong> Points are only for <strong>qualifying</strong> activity (genuine, helpful, original). Copied or spammy answers earn <strong>0</strong> and may be removed. Pending clears after verification.</div>
+</div>
+</div>
+<div id="earn-challenge" class="earn-panel hidden mt-4">
+<div class="rounded-[18px] p-6 md:p-8 text-white relative overflow-hidden" style="background:linear-gradient(135deg,#0B1F16,#04402A)">
+<div class="grid md:grid-cols-2 gap-6 items-center">
+<div><div class="bg-gold text-ink text-xs font-extrabold px-3 py-1.5 rounded-full inline-block">⚡ TODAY'S CHALLENGE • +25 PTS</div><h3 class="font-display font-extrabold text-2xl md:text-3xl mt-3">Ghana Independence & Culture Quiz</h3><p class="text-white/70 text-sm mt-2">5 questions • 60 seconds each • Score ≥3 to win. Progress saves automatically.</p>
+<div class="mt-4 bg-white/10 rounded-2xl p-4 border border-white/10"><div class="flex justify-between text-xs font-bold"><span>PROGRESS</span><span id="earnChalTxt">0/5 completed</span></div><div class="bar !bg-white/20 mt-2"><div id="earnChalBar" class="bg-gold progress-anim" style="width:0%"></div></div><div class="flex justify-between text-xs mt-2 opacity-80"><span>Score: <strong id="earnChalScore">0</strong></span><span>Reward: <strong class="text-gold">+25 pts (≈GH₵1.25)</strong></span></div></div>
+<button onclick="go('challenge')" class="btn btn-gold mt-4">▶ Start / Continue</button></div>
+<div class="bg-white text-ink rounded-2xl p-5"><h4 class="font-extrabold">📅 This week</h4><div class="mt-3 space-y-2 text-sm" id="weekChal"></div></div>
+</div></div>
+</div>
+<div id="earn-board" class="earn-panel hidden mt-4">
+<div class="card p-5 md:p-6"><div class="flex flex-wrap items-center justify-between gap-2"><h3 class="font-display font-extrabold text-lg">🏆 Leaderboards <span class="text-[10px] bg-goldSoft text-goldDeep px-2 py-1 rounded-full">DEMO</span></h3><div class="flex gap-2"><button id="lbW2" onclick="renderFullBoard('weekly')" class="text-xs font-extrabold px-4 py-2 rounded-full bg-ink text-white">Weekly</button><button id="lbM2" onclick="renderFullBoard('monthly')" class="text-xs font-extrabold px-4 py-2 rounded-full bg-surface border border-line">Monthly</button></div></div><p class="text-xs text-muted mt-1">Resets Mondays (weekly) & 1st of month (monthly). Top 3 get bonus + badge.</p><div id="fullBoard" class="mt-4 space-y-2"></div></div>
+</div>
+<div id="earn-badges" class="earn-panel hidden mt-4">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3" id="badgeGrid"></div>
+<div class="mt-3 card p-4 text-[13px] text-muted">Badges unlock automatically based on verified points & accepted answers. Displayed on your profile & leaderboard.</div>
+</div>
+<div id="earn-refer" class="earn-panel hidden mt-4">
+<div class="grid lg:grid-cols-2 gap-4">
+<div class="rounded-[18px] p-6 md:p-8 text-white" style="background:linear-gradient(150deg,#006B3F,#04402A)">
+<h3 class="font-display font-extrabold text-2xl">Invite friends. Earn +50 pts each 👥</h3>
+<p class="text-white/70 text-sm mt-2">Share your code. When your friend verifies phone & earns 50 pts, you both get rewarded.</p>
+<div class="mt-4 bg-white/10 border border-white/20 rounded-2xl p-4"><div class="text-[11px] font-bold opacity-70">YOUR REFERRAL CODE</div><div class="flex items-center justify-between mt-1"><span id="refCode" class="font-display font-extrabold text-2xl tracking-widest">—</span><button onclick="copyRef('code')" class="bg-gold text-ink text-xs font-extrabold px-4 py-2 rounded-full">Copy</button></div></div>
+<div class="mt-3 bg-white/10 border border-white/20 rounded-2xl p-4"><div class="text-[11px] font-bold opacity-70">REFERRAL LINK</div><div class="flex items-center gap-2 mt-1"><span id="refLink" class="text-xs font-mono truncate flex-1">—</span><button onclick="copyRef('link')" class="bg-white text-ink text-xs font-extrabold px-4 py-2 rounded-full shrink-0">Copy Link</button></div></div>
+<div class="grid grid-cols-3 gap-2 mt-4 text-center"><div class="bg-white/10 rounded-2xl p-3"><div id="refCount" class="font-display font-extrabold text-xl">0</div><div class="text-[10px] opacity-70">Successful</div></div><div class="bg-white/10 rounded-2xl p-3"><div id="refPending" class="font-display font-extrabold text-xl">0</div><div class="text-[10px] opacity-70">Pending</div></div><div class="bg-white/10 rounded-2xl p-3"><div id="refEarned" class="font-display font-extrabold text-xl text-gold">0</div><div class="text-[10px] opacity-70">Pts earned</div></div></div>
+<div class="flex gap-2 mt-4"><button onclick="shareRef('whatsapp')" class="flex-1 bg-[#25D366] font-extrabold text-sm py-3 rounded-2xl">WhatsApp</button><button onclick="shareRef('x')" class="flex-1 bg-black border border-white/20 font-extrabold text-sm py-3 rounded-2xl">X / Twitter</button><button onclick="shareRef('sms')" class="flex-1 bg-white text-ink font-extrabold text-sm py-3 rounded-2xl">SMS</button></div>
+</div>
+<div class="space-y-3">
+<div class="card p-5"><h4 class="font-extrabold">How it works</h4><ol class="text-sm mt-2 space-y-2 text-gray-600 font-medium"><li><strong>1.</strong> Share code/link with friends</li><li><strong>2.</strong> They register + verify phone</li><li><strong>3.</strong> They earn 50+ pts genuinely</li><li><strong>4.</strong> You get <strong class="text-brand">+50 pts</strong>, they get <strong class="text-brand">+25 bonus</strong></li></ol></div>
+<div class="bg-red-50 border border-red-200 rounded-[18px] p-5 text-[13px] text-red-900"><strong>🛡️ Anti-abuse protections:</strong><ul class="mt-2 space-y-1 font-medium"><li>• Self-referrals blocked (same phone/device/email)</li><li>• Fake/bulk accounts detected & suspended</li><li>• Rewards only after genuine activity verified</li><li>• Abuse = forfeited points + ban</li></ul></div>
+<div class="card p-5"><h4 class="font-extrabold text-sm">Recent referrals</h4><div id="refList" class="mt-2 text-sm text-muted">No referrals yet. Share to start earning!</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ WALLET ============ -->
+<section id="page-wallet" class="page">
+<div class="mt-4 md:mt-6">
+<div class="flex items-center justify-between"><div><h1 class="font-display font-extrabold text-2xl md:text-3xl">My Wallet 💼</h1><p class="text-sm text-muted">20 pts = GH₵1.00 • Only <strong>Available</strong> can be withdrawn</p></div><span class="bg-goldSoft text-goldDeep text-[10px] font-bold px-2 py-1 rounded-full shrink-0">DEMO BALANCES</span></div>
+<div id="walletGuest" class="hidden mt-4 card p-10 text-center">
+<div class="w-16 h-16 mx-auto rounded-2xl bg-surface flex items-center justify-center"><svg class="w-8 h-8 text-muted"><use href="#i-lock"/></svg></div>
+<h3 class="font-extrabold text-lg mt-3">Log in to view wallet</h3><p class="text-sm text-muted mt-1">Your balances, withdrawals and history are private.</p>
+<button onclick="openAuth('login')" class="btn btn-dark mt-4">Log In / Join Free</button>
+</div>
+<div id="walletMain" class="hidden">
+<div class="grid md:grid-cols-3 gap-3 mt-4">
+<div class="rounded-[18px] p-5 text-white shadow-card relative overflow-hidden" style="background:linear-gradient(140deg,#006B3F,#04402A)"><div class="absolute inset-0 dot-grid opacity-20"></div><div class="relative"><div class="text-[11px] font-bold opacity-80 tracking-widest">✓ AVAILABLE BALANCE</div><div id="wAvail" class="font-display font-extrabold text-3xl md:text-4xl mt-1">GH₵0.00</div><div id="wAvailPts" class="text-xs opacity-80 mt-1">0 pts • Ready to withdraw</div><button onclick="openWithdraw()" class="mt-4 w-full btn btn-gold !text-sm">💰 Withdraw to MoMo</button></div></div>
+<div class="rounded-[18px] p-5 shadow-card border border-gold/30" style="background:linear-gradient(140deg,#F6C343,#E9A706)"><div class="text-[11px] font-bold opacity-70 tracking-widest">⏳ PENDING BALANCE</div><div id="wPend" class="font-display font-extrabold text-3xl md:text-4xl mt-1">GH₵0.00</div><div id="wPendPts" class="text-xs opacity-70 mt-1">0 pts • Verifying 24–48hrs</div><div class="mt-4 bg-white/60 rounded-xl p-2.5 text-[11px] font-bold">Clears after quality check. Spam earns 0.</div></div>
+<div class="bg-ink text-white rounded-[18px] p-5 shadow-card"><div class="text-[11px] font-bold opacity-60 tracking-widest">📈 TOTAL EARNED</div><div id="wTotal" class="font-display font-extrabold text-3xl md:text-4xl mt-1">GH₵0.00</div><div id="wTotalPts" class="text-xs opacity-60 mt-1">Lifetime • All time</div><button onclick="go('questions')" class="mt-4 w-full btn border !border-white/30 !text-white !text-sm">Earn More →</button></div>
+</div>
+<div class="grid lg:grid-cols-3 gap-4 mt-4">
+<div class="lg:col-span-2 card p-5">
+<div class="flex items-center justify-between flex-wrap gap-2"><h3 class="font-extrabold">Transaction History</h3><div class="flex gap-1.5"><button onclick="setTxFilter('all')" class="txf on text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-surface border border-line" data-f="all">All</button><button onclick="setTxFilter('earn')" class="txf text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-surface border border-line" data-f="earn">Earnings</button><button onclick="setTxFilter('withdrawal')" class="txf text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-surface border border-line" data-f="withdrawal">Withdrawals</button></div></div>
+<div id="txList" class="mt-3 space-y-2 max-h-[420px] overflow-y-auto"></div>
+</div>
+<div class="space-y-3">
+<div class="card p-5"><h3 class="font-extrabold text-sm">💳 Withdrawal Rules</h3><ul class="text-[13px] mt-2 space-y-1.5 text-gray-600 font-medium"><li>• Min <strong>GH₵50</strong> • Max <strong>GH₵200/day</strong></li><li>• Phone must be <strong>verified ✓</strong></li><li>• Available balance only</li><li>• 1 request at a time</li></ul><button onclick="openWithdraw()" class="btn btn-primary w-full mt-3 !text-sm">Request Withdrawal</button></div>
+<div class="card p-5"><h3 class="font-extrabold text-sm">📦 My Withdrawals</h3><div id="wdList" class="mt-2 space-y-2 text-sm"></div></div>
+<div class="bg-blue-50 border border-blue-200 rounded-[18px] p-4 text-[12px] text-blue-900">🔒 <strong>Provider note:</strong> Real transfers need a licensed MoMo API configured by admin. Demo simulates statuses only.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ PROFILE ============ -->
+<section id="page-profile" class="page">
+<div class="mt-4 md:mt-6" id="profileGuest">
+<div class="card p-8 md:p-12 text-center">
+<div class="w-16 h-16 mx-auto rounded-2xl bg-surface flex items-center justify-center"><svg class="w-8 h-8 text-muted"><use href="#i-user"/></svg></div>
+<h1 class="font-display font-extrabold text-2xl mt-3">Your Dashboard awaits</h1><p class="text-muted text-sm mt-2">Log in to see balances, answers, badges & progress.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-3 mt-5 max-w-sm mx-auto"><button onclick="openAuth('login')" class="btn btn-dark flex-1">Log In</button><button onclick="openAuth('register')" class="btn btn-primary flex-1">Join Free</button></div>
+<button onclick="loginDemo()" class="text-sm font-bold text-brand mt-4">or explore with Demo Account →</button>
+</div>
+</div>
+<div id="profileMain" class="hidden">
+<div class="rounded-[18px] p-5 md:p-7 text-white relative overflow-hidden" style="background:linear-gradient(120deg,#04402A,#0A5A3A 50%,#0F1E2E)">
+<div class="absolute inset-0 dot-grid opacity-20"></div>
+<div class="kente absolute bottom-0 left-0 right-0 h-1 opacity-80"></div>
+<div class="flex flex-col md:flex-row md:items-center gap-4 relative">
+<div class="flex items-center gap-4 flex-1">
+<div id="pAvatar" class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gold text-ink flex items-center justify-center font-display font-extrabold text-2xl shadow-pop shrink-0">A</div>
+<div class="min-w-0"><div class="flex items-center gap-2 flex-wrap"><h1 id="pName" class="font-display font-extrabold text-xl md:text-2xl">User</h1><span id="pVerified" class="bg-white/20 text-[10px] font-bold px-2 py-1 rounded-full">✓ Verified</span><span id="pAdminBadge" class="hidden bg-gold text-ink text-[10px] font-extrabold px-2 py-1 rounded-full">ADMIN</span></div><div id="pMeta" class="text-xs md:text-sm opacity-80 mt-0.5">@user • Accra • Joined 2026</div><div id="pBadges" class="flex gap-1.5 mt-2 flex-wrap"></div></div>
+</div>
+<div class="flex gap-2 flex-wrap"><button onclick="toggleNotifs(true)" class="bg-white/15 border border-white/20 text-xs font-bold px-4 py-2.5 rounded-full">🔔 Notifications</button><button id="adminBtn" onclick="go('admin')" class="hidden bg-gold text-ink text-xs font-extrabold px-4 py-2.5 rounded-full">⚙️ Admin</button><button onclick="logout()" class="bg-white/15 border border-white/20 text-xs font-bold px-4 py-2.5 rounded-full">Logout</button></div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mt-3">
+<div class="card p-3 md:p-4"><div class="text-[10px] font-extrabold text-brand">AVAILABLE</div><div id="dAvail" class="font-display font-extrabold text-lg md:text-xl">GH₵0</div></div>
+<div class="card p-3 md:p-4"><div class="text-[10px] font-extrabold text-goldDeep">PENDING</div><div id="dPend" class="font-display font-extrabold text-lg md:text-xl">GH₵0</div></div>
+<div class="card p-3 md:p-4"><div class="text-[10px] font-extrabold text-muted">TOTAL EARNED</div><div id="dTotal" class="font-display font-extrabold text-lg md:text-xl">GH₵0</div></div>
+<div class="card p-3 md:p-4"><div class="text-[10px] font-extrabold text-muted">ANSWERED</div><div id="dAnswered" class="font-display font-extrabold text-lg md:text-xl">0</div></div>
+<div class="card p-3 md:p-4"><div class="text-[10px] font-extrabold text-muted">ACCEPTED ✓</div><div id="dAccepted" class="font-display font-extrabold text-lg md:text-xl">0</div></div>
+<div class="card p-3 md:p-4 col-span-2 md:col-span-1"><div class="text-[10px] font-extrabold text-muted">DAILY <span id="dProgTxt">0/5</span></div><div class="bar mt-2"><div id="dProgBar" class="bg-brand progress-anim" style="width:0%"></div></div></div>
+</div>
+<div class="grid grid-cols-4 md:grid-cols-7 gap-2 mt-3">
+<button onclick="go('questions')" class="bg-brand text-white rounded-2xl p-3 md:p-4 text-center shadow-card"><div class="text-xl md:text-2xl">💡</div><div class="text-[10px] md:text-xs font-extrabold mt-1">Answer</div></button>
+<button onclick="go('ask')" class="card p-3 md:p-4 text-center card-hover"><div class="text-xl md:text-2xl">✍️</div><div class="text-[10px] md:text-xs font-extrabold mt-1">Ask</div></button>
+<button onclick="showMyContent('answers')" class="card p-3 md:p-4 text-center card-hover"><div class="text-xl md:text-2xl">💬</div><div class="text-[10px] md:text-xs font-extrabold mt-1">My Answers</div></button>
+<button onclick="showMyContent('questions')" class="card p-3 md:p-4 text-center card-hover"><div class="text-xl md:text-2xl">❓</div><div class="text-[10px] md:text-xs font-extrabold mt-1">My Questions</div></button>
+<button onclick="go('wallet')" class="card p-3 md:p-4 text-center card-hover"><div class="text-xl md:text-2xl">💼</div><div class="text-[10px] md:text-xs font-extrabold mt-1">Wallet</div></button>
+<button onclick="openWithdraw()" class="rounded-2xl p-3 md:p-4 text-center bg-gold"><div class="text-xl md:text-2xl">💰</div><div class="text-[10px] md:text-xs font-extrabold mt-1">Withdraw</div></button>
+<button onclick="go('wallet')" class="card p-3 md:p-4 text-center card-hover col-span-2 md:col-span-1"><div class="text-xl md:text-2xl">🧾</div><div class="text-[10px] md:text-xs font-extrabold mt-1">History</div></button>
+</div>
+<div class="grid lg:grid-cols-3 gap-4 mt-4">
+<div class="lg:col-span-2 card p-5"><div class="flex items-center justify-between"><h3 id="myContentTitle" class="font-extrabold">My Answers</h3><div class="flex gap-2"><button onclick="showMyContent('answers')" class="text-xs font-bold px-3 py-1.5 rounded-full bg-surface border border-line">Answers</button><button onclick="showMyContent('questions')" class="text-xs font-bold px-3 py-1.5 rounded-full bg-surface border border-line">Questions</button></div></div><div id="myContent" class="mt-3 space-y-2"></div></div>
+<div class="space-y-3">
+<div class="card p-5"><h3 class="font-extrabold text-sm">⚙️ Settings</h3>
+<div class="mt-3 space-y-2 text-sm">
+<label class="flex items-center justify-between bg-surface border border-line rounded-xl px-3 py-2.5"><span class="text-xs font-bold">MoMo Network</span><select id="setNetwork" onchange="updateSettings()" class="text-xs font-bold bg-white border border-line rounded-lg px-2 py-1.5"></select></label>
+<label class="flex items-center justify-between bg-surface border border-line rounded-xl px-3 py-2.5"><span class="text-xs font-bold">MoMo Number</span><input id="setMomoNum" onchange="updateSettings()" class="text-xs font-bold bg-white border border-line rounded-lg px-2 py-1.5 w-32 text-right" placeholder="024..."/></label>
+<label class="flex items-center justify-between bg-surface border border-line rounded-xl px-3 py-2.5"><span class="text-xs font-bold">🔔 Notifications</span><input id="setNotif" type="checkbox" checked onchange="updateSettings()" class="w-5 h-5 accent-green-700"/></label>
+<label class="flex items-center justify-between bg-surface border border-line rounded-xl px-3 py-2.5"><span class="text-xs font-bold">👁️ Public profile</span><input id="setPublic" type="checkbox" checked onchange="updateSettings()" class="w-5 h-5 accent-green-700"/></label>
+</div>
+<button id="verifyBtn2" onclick="startOTP()" class="mt-3 w-full text-xs font-extrabold py-3 rounded-xl border border-line bg-white">Verify Phone</button>
+</div>
+<div class="card p-5"><h3 class="font-extrabold text-sm">🎖️ My Badges</h3><div id="pBadgeDetail" class="mt-2 grid grid-cols-2 gap-2"></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ QDETAIL ============ -->
+<section id="page-qdetail" class="page">
+<div class="mt-4 md:mt-6 max-w-4xl mx-auto">
+<button onclick="go('questions')" class="text-sm font-bold text-muted hover:text-ink">← Back to questions</button>
+<div id="qdWrap" class="mt-3"></div>
+</div>
+</section>
+
+<!-- ============ CHALLENGE ============ -->
+<section id="page-challenge" class="page">
+<div class="mt-4 md:mt-6 max-w-2xl mx-auto">
+<div class="rounded-[20px] p-5 md:p-8 text-white relative overflow-hidden" style="background:linear-gradient(150deg,#0B1F16,#04402A)">
+<div class="absolute inset-0 dot-grid opacity-15"></div>
+<div class="relative">
+<div class="flex items-center justify-between"><button onclick="go('home')" class="text-xs font-bold opacity-70 hover:opacity-100">← Exit</button><span class="bg-gold text-ink text-[11px] font-extrabold px-3 py-1 rounded-full">+25 PTS REWARD</span></div>
+<div id="quizBox" class="mt-4"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ ADMIN ============ -->
+<section id="page-admin" class="page">
+<div class="mt-4 md:mt-6">
+<div id="adminGuard" class="card p-10 text-center">
+<div class="w-16 h-16 mx-auto rounded-2xl bg-surface flex items-center justify-center"><svg class="w-8 h-8 text-muted"><use href="#i-lock"/></svg></div>
+<h2 class="font-extrabold text-xl mt-3">Admin access only</h2><p class="text-sm text-muted mt-1">Log in with an admin account. Demo: <strong>admin@ghanaanswer.com / admin123</strong></p>
+<button onclick="openAuth('login')" class="btn btn-dark mt-4">Log In</button>
+</div>
+<div id="adminMain" class="hidden">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2"><div><h1 class="font-display font-extrabold text-2xl">⚙️ Admin Dashboard</h1><p class="text-xs text-muted">Manage users, content, withdrawals & analytics <span class="bg-goldSoft text-goldDeep px-2 py-0.5 rounded-full font-bold">DEMO DATA</span></p></div><button onclick="go('profile')" class="text-sm font-bold">← Back to profile</button></div>
+<div class="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-1">
+<button data-adm="overview" onclick="switchAdmin('overview')" class="adm-tab on whitespace-nowrap text-xs font-extrabold px-4 py-2.5 rounded-full bg-white border border-line">📊 Overview</button>
+<button data-adm="users" onclick="switchAdmin('users')" class="adm-tab whitespace-nowrap text-xs font-extrabold px-4 py-2.5 rounded-full bg-white border border-line">👥 Users</button>
+<button data-adm="questions" onclick="switchAdmin('questions')" class="adm-tab whitespace-nowrap text-xs font-extrabold px-4 py-2.5 rounded-full bg-white border border-line">❓ Content</button>
+<button data-adm="reports" onclick="switchAdmin('reports')" class="adm-tab whitespace-nowrap text-xs font-extrabold px-4 py-2.5 rounded-full bg-white border border-line">🚩 Reports</button>
+<button data-adm="withdrawals" onclick="switchAdmin('withdrawals')" class="adm-tab whitespace-nowrap text-xs font-extrabold px-4 py-2.5 rounded-full bg-white border border-line">💰 Withdrawals</button>
+<button data-adm="networks" onclick="switchAdmin('networks')" class="adm-tab whitespace-nowrap text-xs font-extrabold px-4 py-2.5 rounded-full bg-white border border-line">📲 Networks</button>
+</div>
+<div id="adm-overview" class="adm-panel mt-4">
+<div id="analyticsGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3"></div>
+<div class="grid lg:grid-cols-2 gap-4 mt-4">
+<div class="card p-5"><h3 class="font-extrabold text-sm">Activity (7 days)</h3><div id="chActivity" class="mt-4"></div></div>
+<div class="card p-5"><h3 class="font-extrabold text-sm">Withdrawal statuses</h3><div id="chWd" class="mt-4"></div></div>
+</div>
+<div class="mt-3 bg-blue-50 border border-blue-200 rounded-2xl p-4 text-[13px] text-blue-900">🔌 <strong>Payment provider integration:</strong> Connect licensed API (MTN MoMo, Hubtel, Paystack) via secure backend with API keys & webhooks. Never expose keys in frontend. Current mode: <strong>DEMO — manual simulation</strong>.</div>
+</div>
+<div id="adm-users" class="adm-panel hidden mt-4 card p-5"><h3 class="font-extrabold">Registered Users</h3><div class="overflow-x-auto mt-3"><table class="w-full text-xs min-w-[640px]"><thead><tr class="text-left text-muted border-b"><th class="py-2">User</th><th>Contact</th><th>Region</th><th>Points</th><th>Status</th><th>Action</th></tr></thead><tbody id="admUserRows"></tbody></table></div></div>
+<div id="adm-questions" class="adm-panel hidden mt-4 card p-5"><h3 class="font-extrabold">Content Moderation</h3><div id="admQList" class="mt-3 space-y-2"></div></div>
+<div id="adm-reports" class="adm-panel hidden mt-4 card p-5"><h3 class="font-extrabold">🚩 Reports Queue</h3><div id="admReports" class="mt-3 space-y-2"></div></div>
+<div id="adm-withdrawals" class="adm-panel hidden mt-4 card p-5"><h3 class="font-extrabold">💰 Withdrawal Requests</h3><div id="admWdList" class="mt-3 space-y-2"></div></div>
+<div id="adm-networks" class="adm-panel hidden mt-4"><div class="card p-5"><h3 class="font-extrabold">📲 Supported MoMo Networks</h3><div id="netList" class="mt-3 space-y-2"></div><div class="grid grid-cols-2 gap-2 mt-4"><div><label class="label">Min withdraw (GH₵)</label><input id="cfgMin" type="number" class="input mt-1 !font-bold"/></div><div><label class="label">Daily max (GH₵)</label><input id="cfgMax" type="number" class="input mt-1 !font-bold"/></div></div><button onclick="saveNetConfig()" class="btn btn-primary mt-3 !text-sm">Save Configuration</button></div></div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mt-10 bg-ink text-white rounded-t-[22px] md:rounded-[22px] overflow-hidden mb-20 md:mb-6">
+<div class="kente h-1"></div>
+<div class="p-6 md:p-10 grid md:grid-cols-4 gap-8">
+<div><div class="flex items-center gap-2"><svg class="w-5 h-5 text-gold"><use href="#i-star"/></svg><span class="font-display font-extrabold">Ghana Answer & Earn</span></div><p class="text-xs text-white/60 mt-3 leading-relaxed">Share Your Knowledge. Answer Ghana. Earn Rewards.<br/>Built for students, workers & curious minds.</p><div class="flex gap-2 mt-3"><span class="bg-white/10 text-[10px] font-bold px-2.5 py-1 rounded-full">🇬🇭 16 Regions</span><span class="bg-white/10 text-[10px] font-bold px-2.5 py-1 rounded-full">📲 MoMo Ready</span></div></div>
+<div><h4 class="font-extrabold text-sm">Platform</h4><ul class="text-[13px] text-white/60 mt-3 space-y-2 font-medium"><li><button onclick="go('questions')" class="hover:text-white">Browse Questions</button></li><li><button onclick="go('ask')" class="hover:text-white">Ask Question</button></li><li><button onclick="go('earn')" class="hover:text-white">Earn & Leaderboard</button></li><li><button onclick="go('wallet')" class="hover:text-white">Wallet & Withdraw</button></li></ul></div>
+<div><h4 class="font-extrabold text-sm">Legal & Safety</h4><ul class="text-[13px] text-white/60 mt-3 space-y-2 font-medium"><li><button onclick="openInfo('terms')" class="hover:text-white">Terms of Service</button></li><li><button onclick="openInfo('privacy')" class="hover:text-white">Privacy Policy</button></li><li><button onclick="openInfo('guidelines')" class="hover:text-white">Community Guidelines</button></li><li><button onclick="openInfo('contact')" class="hover:text-white">Contact Us</button></li></ul></div>
+<div><h4 class="font-extrabold text-sm">Stay updated</h4><p class="text-xs text-white/60 mt-2">Get new questions & challenges.</p><div class="flex gap-2 mt-3"><input id="nlEmail" placeholder="Email address" class="flex-1 bg-white/10 border border-white/10 rounded-xl px-3 py-3 text-sm min-w-0 placeholder:text-white/40"/></div><button onclick="subscribe()" class="btn btn-gold w-full mt-2 !min-h-[44px] !text-sm">Subscribe</button><p class="text-[10px] text-white/40 mt-2">support@ghanaanswer.com • Accra, Ghana</p></div>
+</div>
+<div class="border-t border-white/10 px-6 py-4 text-[10px] md:text-[11px] text-white/40 text-center leading-relaxed">© 2026 Ghana Answer & Earn (Demo). Rewards for qualifying activity & verification — not guaranteed income. Sample balances & users are demo data.</div>
+</footer>
+</main>
+
+<!-- BOTTOM NAV -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/97 backdrop-blur-md border-t border-line px-2" style="padding-bottom:env(safe-area-inset-bottom)">
+<div class="grid grid-cols-5 gap-1 py-2 items-end">
+<button data-nav="home" onclick="go('home')" class="bottom-item active flex flex-col items-center gap-0.5 py-1"><span class="b-icon"><svg class="w-5 h-5"><use href="#i-home"/></svg></span><span class="text-[10px] font-extrabold">Home</span></button>
+<button data-nav="questions" onclick="go('questions')" class="bottom-item flex flex-col items-center gap-0.5 py-1"><span class="b-icon"><svg class="w-5 h-5"><use href="#i-help"/></svg></span><span class="text-[10px] font-extrabold">Questions</span></button>
+<button onclick="go('ask')" class="flex flex-col items-center -mt-7"><span class="w-[60px] h-[60px] rounded-full text-white flex items-center justify-center text-[28px] font-extrabold shadow-pop border-4 border-surface" style="background:linear-gradient(140deg,#006B3F,#04402A)">+</span><span class="text-[10px] font-extrabold text-brand mt-1">Ask</span></button>
+<button data-nav="earn" onclick="go('earn')" class="bottom-item flex flex-col items-center gap-0.5 py-1"><span class="b-icon"><svg class="w-5 h-5"><use href="#i-trophy"/></svg></span><span class="text-[10px] font-extrabold">Earn</span></button>
+<button data-nav="wallet" onclick="go('wallet')" class="bottom-item flex flex-col items-center gap-0.5 py-1"><span class="b-icon"><svg class="w-5 h-5"><use href="#i-wallet"/></svg></span><span class="text-[10px] font-extrabold">Wallet</span></button>
+</div>
+</nav>
+
+<!-- AUTH MODAL -->
+<div id="authModal" class="hidden fixed inset-0 z-50 flex items-end md:items-center justify-center md:p-4">
+<div class="absolute inset-0 modal-bg" onclick="closeAuth()"></div>
+<div class="relative bg-white w-full md:max-w-lg rounded-t-[22px] md:rounded-[22px] max-h-[94vh] overflow-y-auto shadow-pop">
+<div class="kente h-1 rounded-t-[22px]"></div>
+<div class="p-5 md:p-8">
+<div class="sheet-handle md:hidden"></div>
+<div class="flex items-center justify-between"><h2 class="font-display font-extrabold text-xl">🇬🇭 Welcome</h2><button onclick="closeAuth()" class="w-9 h-9 rounded-full bg-surface font-bold">✕</button></div>
+<div class="grid grid-cols-2 bg-surface border border-line rounded-2xl p-1 mt-4"><button id="tabLogin" onclick="authTab('login')" class="py-2.5 rounded-xl text-sm font-extrabold bg-white shadow">Log In</button><button id="tabRegister" onclick="authTab('register')" class="py-2.5 rounded-xl text-sm font-extrabold text-muted">Register</button></div>
+<div id="authErr" class="hidden mt-3 bg-red-50 border border-red-200 text-red-800 text-[13px] font-bold rounded-xl p-3"></div>
+<div id="formLogin" class="mt-4 space-y-3">
+<div><label class="label">Email or username</label><input id="liId" placeholder="ama@demo.com" class="input mt-1.5"/></div>
+<div><label class="label">Password</label><input id="liPass" type="password" placeholder="••••••••" class="input mt-1.5"/></div>
+<button id="loginBtn" onclick="doLogin()" class="btn btn-primary w-full">Log In →</button>
+<button onclick="loginDemo()" class="btn w-full bg-goldSoft border !border-gold/40 !text-[#5A4500] !text-sm">✨ Try Demo Account (Ama • GH₵86.50)</button>
+<p class="text-[11px] text-muted text-center">Admin demo: admin@ghanaanswer.com / admin123</p>
+</div>
+<div id="formRegister" class="hidden mt-4 space-y-3">
+<div class="grid grid-cols-2 gap-2"><div><label class="label">Full name *</label><input id="rgName" placeholder="Ama Serwaa" class="input mt-1"/></div><div><label class="label">Username *</label><input id="rgUser" placeholder="ama_knows" class="input mt-1"/></div></div>
+<div><label class="label">Email *</label><input id="rgEmail" type="email" placeholder="you@example.com" class="input mt-1"/></div>
+<div class="grid grid-cols-2 gap-2"><div><label class="label">Phone *</label><input id="rgPhone" placeholder="0241234567" class="input mt-1"/></div><div><label class="label">Password *</label><input id="rgPass" type="password" placeholder="6+ chars" class="input mt-1"/></div></div>
+<div class="grid grid-cols-2 gap-2"><div><label class="label">DOB *</label><input id="rgDob" type="date" class="input mt-1"/></div><div><label class="label">Region *</label><select id="rgRegion" class="input mt-1"></select></div></div>
+<div><label class="label">MoMo network *</label><select id="rgNetwork" class="input mt-1"></select></div>
+<div><label class="label">Referral code (optional)</label><input id="rgRef" placeholder="e.g. AMA2026" class="input mt-1"/></div>
+<label class="flex items-start gap-2 text-[12px] text-gray-600 font-medium"><input id="rgAge" type="checkbox" class="mt-0.5 w-4 h-4 accent-green-700"/> I confirm I am at least 13 (under 18 needs guardian consent).</label>
+<label class="flex items-start gap-2 text-[12px] text-gray-600 font-medium"><input id="rgTerms" type="checkbox" class="mt-0.5 w-4 h-4 accent-green-700"/> <span>I agree to <button onclick="openInfo('terms')" class="text-brand font-bold">Terms</button>, <button onclick="openInfo('privacy')" class="text-brand font-bold">Privacy</button> & <button onclick="openInfo('guidelines')" class="text-brand font-bold">Guidelines</button>.</span></label>
+<button id="regBtn" onclick="doRegister()" class="btn btn-dark w-full">Create Account + Get 10 pts 🎉</button>
+<p class="text-[11px] text-muted text-center">Phone verification (OTP) required before withdrawals.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- OTP MODAL -->
+<div id="otpModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+<div class="absolute inset-0 modal-bg"></div>
+<div class="relative bg-white w-full max-w-sm rounded-[22px] p-6 shadow-pop text-center">
+<div class="text-4xl">📲</div><h3 class="font-display font-extrabold text-xl mt-2">Verify your phone</h3>
+<p class="text-[13px] text-muted mt-1">We sent a 6-digit code to <strong id="otpPhone">your phone</strong>. Enter it to unlock withdrawals.</p>
+<div class="mt-3 bg-goldSoft border border-gold/30 rounded-2xl p-3"><div class="text-[10px] font-bold text-goldDeep">DEMO MODE — Your code is:</div><div id="otpCodeShow" class="font-display font-extrabold text-3xl tracking-[.3em] text-ink">------</div></div>
+<input id="otpInput" maxlength="6" inputmode="numeric" placeholder="••••••" class="input mt-3 !text-center !font-display !font-extrabold !text-2xl !tracking-[.3em]"/>
+<button onclick="verifyOTP()" class="btn btn-primary w-full mt-3">Verify & Unlock ✓</button>
+<button onclick="document.getElementById('otpModal').classList.add('hidden')" class="mt-2 text-xs font-bold text-muted">Later</button>
+</div>
+</div>
+
+<!-- WITHDRAW MODAL -->
+<div id="wdModal" class="hidden fixed inset-0 z-50 flex items-end md:items-center justify-center md:p-4">
+<div class="absolute inset-0 modal-bg" onclick="closeWithdraw()"></div>
+<div class="relative bg-white w-full md:max-w-md rounded-t-[22px] md:rounded-[22px] p-6 shadow-pop max-h-[92vh] overflow-y-auto">
+<div class="sheet-handle md:hidden"></div>
+<div id="wdStep1">
+<div class="flex items-center justify-between"><h3 class="font-display font-extrabold text-xl">💰 Withdraw to MoMo</h3><button onclick="closeWithdraw()" class="w-9 h-9 rounded-full bg-surface font-bold">✕</button></div>
+<div class="mt-3 bg-brandLight border border-brand/20 rounded-2xl p-3 flex justify-between text-sm"><span class="font-bold text-gray-600">Available:</span><span id="wdAvailTxt" class="font-extrabold text-brand">GH₵0.00</span></div>
+<div id="wdErr" class="hidden mt-3 bg-red-50 border border-red-200 text-red-800 text-[13px] font-bold rounded-xl p-3"></div>
+<div class="mt-3 space-y-3">
+<div><label class="label">MoMo network *</label><select id="wdNetwork" class="input mt-1.5 !font-bold"></select></div>
+<div><label class="label">MoMo number *</label><input id="wdNumber" placeholder="e.g. 0241234567" class="input mt-1.5 !font-bold"/></div>
+<div><label class="label">Amount (GH₵) * <span class="text-muted font-medium normal-case">Min 50 • Max 200/day</span></label><input id="wdAmount" type="number" min="50" max="200" placeholder="50" oninput="updWdPts()" class="input mt-1.5 !font-extrabold"/></div>
+<div class="flex gap-2"><button onclick="setWd(50)" class="flex-1 text-xs font-bold bg-surface border border-line py-2.5 rounded-xl">50</button><button onclick="setWd(100)" class="flex-1 text-xs font-bold bg-surface border border-line py-2.5 rounded-xl">100</button><button onclick="setWd(150)" class="flex-1 text-xs font-bold bg-surface border border-line py-2.5 rounded-xl">150</button><button onclick="setWd(200)" class="flex-1 text-xs font-bold bg-surface border border-line py-2.5 rounded-xl">200</button></div>
+</div>
+<div class="mt-3 bg-goldSoft border border-gold/30 rounded-2xl p-3 text-[12px] text-[#5A4500]">Deducts <strong id="wdPtsPreview">1,000 pts</strong> from Available. Status: Pending → Processing → Completed.</div>
+<button onclick="withdrawPreview()" class="btn btn-primary w-full mt-3">Review Request →</button>
+</div>
+<div id="wdStep2" class="hidden">
+<h3 class="font-display font-extrabold text-xl">Confirm withdrawal ⚠️</h3>
+<div class="mt-4 bg-surface border border-line rounded-2xl p-4 space-y-2.5 text-sm">
+<div class="flex justify-between"><span class="text-muted">Network</span><strong id="cfNet">—</strong></div>
+<div class="flex justify-between"><span class="text-muted">Number</span><strong id="cfNum">—</strong></div>
+<div class="flex justify-between"><span class="text-muted">Amount</span><strong id="cfAmt" class="text-brand">—</strong></div>
+<div class="flex justify-between"><span class="text-muted">Points</span><strong id="cfPts">—</strong></div>
+<div class="flex justify-between"><span class="text-muted">Reference</span><strong id="cfRef" class="font-mono text-xs">—</strong></div>
+</div>
+<p class="text-[12px] text-muted mt-3">By confirming, you agree the MoMo details are correct. Wrong numbers may cause Failed/Reversed status.</p>
+<div class="flex gap-2 mt-4"><button onclick="wdBack()" class="btn btn-outline flex-1 !text-sm">← Back</button><button id="wdSubmitBtn" onclick="submitWithdraw()" class="btn btn-dark flex-[2] !text-sm">Confirm & Submit ✓</button></div>
+</div>
+<div id="wdStep3" class="hidden text-center py-4">
+<div class="check-pop w-20 h-20 mx-auto rounded-full bg-brandLight flex items-center justify-center"><svg class="w-10 h-10 text-brand"><use href="#i-check"/></svg></div>
+<h3 class="font-display font-extrabold text-xl mt-3">Request received!</h3>
+<p class="text-sm text-muted mt-2">Status: <span class="status status-Pending"><i></i>Pending</span></p>
+<div class="bg-surface border border-line rounded-2xl p-4 mt-4 text-sm text-left"><div class="flex justify-between"><span>Reference</span><strong id="doneRef" class="font-mono">—</strong></div><div class="flex justify-between mt-1"><span>Amount</span><strong id="doneAmt">—</strong></div></div>
+<button onclick="closeWithdraw();go('wallet')" class="btn btn-primary w-full mt-4">Track in Wallet →</button>
+</div>
+</div>
+</div>
+
+<!-- REPORT MODAL -->
+<div id="reportModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+<div class="absolute inset-0 modal-bg" onclick="document.getElementById('reportModal').classList.add('hidden')"></div>
+<div class="relative bg-white w-full max-w-sm rounded-[22px] p-6 shadow-pop">
+<h3 class="font-display font-extrabold text-lg">🚩 Report content</h3><p class="text-xs text-muted mt-1">Help keep the community safe. Reports are reviewed by moderators.</p>
+<select id="repReason" class="input mt-3 !font-semibold !text-sm"><option>Spam or advertisement</option><option>Scam / fraud</option><option>Abusive / tribalistic language</option><option>Exam malpractice request</option><option>Wrong / misleading info</option><option>Other</option></select>
+<textarea id="repDetails" rows="3" placeholder="Details (optional)..." class="input mt-2 !text-sm"></textarea>
+<button onclick="submitReport()" class="btn w-full mt-3 !bg-danger !text-white">Submit Report</button>
+</div>
+</div>
+
+<!-- INFO MODAL -->
+<div id="infoModal" class="hidden fixed inset-0 z-50 flex items-end md:items-center justify-center md:p-4">
+<div class="absolute inset-0 modal-bg" onclick="document.getElementById('infoModal').classList.add('hidden')"></div>
+<div class="relative bg-white w-full md:max-w-2xl rounded-t-[22px] md:rounded-[22px] p-6 md:p-8 shadow-pop max-h-[88vh] overflow-y-auto">
+<div class="sheet-handle md:hidden"></div>
+<div class="flex items-center justify-between"><h3 id="infoTitle" class="font-display font-extrabold text-xl">Info</h3><button onclick="document.getElementById('infoModal').classList.add('hidden')" class="w-9 h-9 rounded-full bg-surface font-bold">✕</button></div>
+<div id="infoBody" class="mt-3 text-sm text-gray-600 leading-relaxed"></div>
+</div>
+</div>
+
+<!-- NOTIFS DRAWER -->
+<div id="notifWrap" class="hidden fixed inset-0 z-50">
+<div class="absolute inset-0 modal-bg" onclick="toggleNotifs(false)"></div>
+<div id="notifPanel" class="drawer absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-pop flex flex-col translate-x-full">
+<div class="p-5 border-b border-line flex items-center justify-between"><div><h3 class="font-display font-extrabold text-lg">🔔 Notifications</h3><p class="text-[11px] text-muted">Accepted • Rewards • Withdrawals • Security</p></div><div class="flex gap-2 items-center"><button onclick="markAllRead()" class="text-[11px] font-bold text-brand">Mark read</button><button onclick="toggleNotifs(false)" class="w-8 h-8 rounded-full bg-surface font-bold">✕</button></div></div>
+<div id="notifList" class="flex-1 overflow-y-auto p-4 space-y-2 bg-surface/50"></div>
+</div>
+</div>
+
+<div id="toasts" class="fixed bottom-24 md:bottom-8 left-1/2 -translate-x-1/2 z-[60] w-[92%] max-w-md space-y-2 pointer-events-none"></div>
+
+<script>
+/* ============ STATE & HELPERS ============ */
+const RATE=0.05;
+const $=id=>document.getElementById(id);
+const uid=p=>(p||'id')+'_'+Math.random().toString(36).slice(2,9);
+const now=()=>Date.now();
+const gh=n=>'GH₵'+Number(n).toFixed(2);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function timeAgo(t){const s=(Date.now()-t)/1000;if(s<60)return'just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';if(s<864000)return Math.floor(s/86400)+'d ago';return new Date(t).toLocaleDateString();}
+function toast(msg,type='info'){const colors={info:'bg-ink text-white',success:'bg-brand text-white',error:'bg-danger text-white',gold:'bg-gold text-ink'};const icons={info:'ℹ️',success:'✓',error:'⚠️',gold:'🎉'};const d=document.createElement('div');d.className=`toast-in ${colors[type]} rounded-2xl px-4 py-3 shadow-pop text-[13px] font-bold flex items-center gap-2.5 pointer-events-auto border border-black/10`;d.innerHTML=`<span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center shrink-0 text-sm">${icons[type]}</span><span>${msg}</span>`;$('toasts').appendChild(d);setTimeout(()=>{d.style.opacity='0';d.style.transition='.4s';setTimeout(()=>d.remove(),400)},3200);}
+function load(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v??f;}catch{return f;}}
+function save(k,v){localStorage.setItem(k,JSON.stringify(v));}
+let users=load('gae_users2',null),questions=load('gae_questions2',null),transactions=load('gae_txs2',[]),withdrawals=load('gae_wds2',[]),notifications=load('gae_notifs2',[]),reports=load('gae_reports2',[]),networks=load('gae_networks2',null),cfg=load('gae_cfg2',{min:50,max:200}),session=load('gae_session2',null),chalState=load('gae_chal2',{});
+let boardMode='weekly',fullMode='weekly',txFilter='all',myTab='answers',admTab='overview',currentQ=null,reportTarget=null,pendingWd=null,otpCode=null,selectedCat='All',quizIdx=0,quizScore=0,quizTimer=null,quizLock=false;
+const REGIONS=['Ahafo','Ashanti','Bono','Bono East','Central','Eastern','Greater Accra','North East','Northern','Oti','Savannah','Upper East','Upper West','Volta','Western','Western North'];
+const CATS=[['Education','📚','#DBEAFE'],['Mathematics','🔢','#E0E7FF'],['Science','🔬','#D1FAE5'],['Technology','💻','#E0F2FE'],['Ghana History','🏛️','#FEF3C7'],['Business','💼','#FCE7F3'],['Agriculture','🌾','#DCFCE7'],['Jobs & Careers','💳','#EDE9FE'],['Government & Civics','🏳️','#F3F4F6'],['Entertainment','🎬','#FFE4E6'],['Sports','⚽','#DCFCE7'],['Local Culture','🥁','#FEF3C7'],['General Knowledge','🌍','#E0F2FE']];
+const AVATAR_COLORS=['#C8102E','#006B3F','#7C3AED','#D97706','#0EA5E9','#EC4899','#1F2937'];
+const DEMO_BOARD=[{name:'Kwame Mensah',user:'@kwame_answers',region:'Ashanti',w:1240,m:4820,acc:89,av:'#C8102E'},{name:'Ama Serwaa',user:'@ama_knows',region:'Greater Accra',w:1180,m:4610,acc:82,av:'#006B3F'},{name:'Yaw Darko',user:'@yawdarko',region:'Eastern',w:960,m:3980,acc:71,av:'#7C3AED'},{name:'Efua Amoah',user:'@efua_e',region:'Central',w:840,m:3420,acc:64,av:'#D97706'},{name:'Kofi Boateng',user:'@kofib',region:'Bono',w:720,m:3105,acc:58,av:'#0EA5E9'},{name:'Abena Owusu',user:'@abena_o',region:'Ashanti',w:655,m:2890,acc:52,av:'#EC4899'},{name:'Fiifi Hammond',user:'@fiifi_h',region:'Western',w:590,m:2540,acc:47,av:'#1F2937'},{name:'Adjoa Tetteh',user:'@adjoa_t',region:'Volta',w:510,m:2210,acc:41,av:'#006B3F'}];
+const QUIZ=[{q:'What is the capital city of Ghana?',o:['Kumasi','Accra','Takoradi','Tamale'],a:1},{q:'Ghana gained independence in which year?',o:['1948','1957','1960','1966'],a:1},{q:'Which is Ghana\'s largest man-made lake by surface area?',o:['Lake Bosomtwe','Lake Volta','Lake Chad','Lake Victoria'],a:1},{q:'What currency is used in Ghana?',o:['Naira','Cedi','Rand','Shilling'],a:1},{q:'Who was Ghana\'s first President?',o:['J.B. Danquah','K.A. Busia','Kwame Nkrumah','Jerry Rawlings'],a:2}];
+const WEEK=[['Mon','Maths Basics','done'],['Tue','Science & Health','done'],['Wed','Ghana History Quiz','today'],['Thu','Business & Money','locked'],['Fri','General Knowledge','locked']];
+const BADGES=[['welcome','🎉','Welcome','Join the community'],['first','💬','First Answer','Post your first answer'],['helper10','🌟','Helper x10','Answer 10 questions'],['accepted','✅','Accepted','Get an answer accepted'],['ace5','🏅','Top Helper','5 accepted answers'],['quiz','⚡','Quiz Champ','Win a daily challenge'],['refer','👥','Connector','1 successful referral'],['earner','💰','Earner','Earn GH₵50+ total']];
+function dayKey(){return new Date().toISOString().slice(0,10);}
+function me(){return users.find(u=>u.id===session);}
+function persist(){save('gae_users2',users);save('gae_questions2',questions);save('gae_txs2',transactions);save('gae_wds2',withdrawals);save('gae_notifs2',notifications);save('gae_reports2',reports);save('gae_networks2',networks);save('gae_cfg2',cfg);save('gae_session2',session);save('gae_chal2',chalState);}
+function catColor(c){const f=CATS.find(x=>x[0]===c);return f?f[2]:'#F3F4F6';}
+function catIcon(c){const f=CATS.find(x=>x[0]===c);return f?f[1]:'📌';}
+
+/* ============ SEED ============ */
+function seed(){
+if(!users){users=[
+{id:'u_admin',fullName:'Platform Admin',username:'admin',email:'admin@ghanaanswer.com',phone:'0240000000',pass:'admin123',dob:'1990-01-01',region:'Greater Accra',momoNetwork:'MTN Mobile Money',momoNumber:'0240000000',verified:true,ptsA:5000,ptsP:0,totalGH:320,answered:210,accepted:150,badges:['welcome','first','helper10','accepted','ace5'],referralCode:'ADMIN01',referrals:[],suspended:false,joined:now()-90*864e5,isAdmin:true,av:'#1F2937',notif:true,pub:true,ref:'',refRewarded:true,daily:{date:dayKey(),n:5}},
+{id:'u_demo',fullName:'Ama Serwaa Demo',username:'ama_demo',email:'ama@demo.com',phone:'0241114821',pass:'demo123',dob:'2002-05-14',region:'Greater Accra',momoNetwork:'MTN Mobile Money',momoNumber:'0241114821',verified:true,ptsA:1730,ptsP:640,totalGH:118.5,answered:34,accepted:12,badges:['welcome','first','helper10','accepted'],referralCode:'AMA2026',referrals:[{name:'Kofi B.',pts:50,status:'Successful',date:now()-2*864e5},{name:'Yaw D.',pts:0,status:'Pending',date:now()-1*864e5}],suspended:false,joined:now()-40*864e5,isAdmin:false,av:'#006B3F',notif:true,pub:true,ref:'',refRewarded:true,daily:{date:dayKey(),n:3}}
+];save('gae_users2',users);}
+if(!questions){const mk=(title,details,cat,name,user,av,hours,views,tags,featured,answers)=>({id:uid('q'),title,details,category:cat,author:{name,user,av},authorId:'seed',date:now()-hours*36e5,views,tags,featured,answers:answers.map(a=>({id:uid('a'),author:a[0],user:a[1],av:a[2],userId:null,text:a[3],up:a[4],down:a[5]||0,date:now()-(hours-1)*36e5,accepted:!!a[6],bonus:!!a[7],voters:{}}))});
+questions=[
+mk('Who were the Big Six and what role did they play in Ghana\'s independence?','I have a Social Studies exam next week. Please explain simply who the Big Six were and why they are important. Mention UGCC if possible.','Ghana History','Efua Amoah','@efua_e','#D97706',5,842,['history','bece','shs'],true,[['Kwame Mensah','@kwame_answers','#C8102E','The Big Six were the UGCC leaders arrested after the 1948 Accra riots: Kwame Nkrumah, J.B. Danquah, Ako Adjei, Edward Akufo-Addo, William Ofori Atta and Emmanuel Obetsebi-Lamptey. Their arrest united Ghanaians and sped up independence. Nkrumah later formed CPP and led Ghana to independence on 6 March 1957.',48,1,true,true],['Ama Serwaa','@ama_knows','#006B3F','Simple way: UGCC leaders jailed in 1948. Think "Nkrumah + 5 uncles". Nkrumah broke away to form CPP with motto "Self-Government Now". Exam tip: mention Watson Commission and Coussey Committee.',31,0,false,false]]),
+mk('How do I solve simultaneous equations: 2x + 3y = 12 and x − y = 1?','JHS 3 student here. My teacher used elimination but I didn\'t understand. Please show step by step.','Mathematics','Yaw Darko','@yawdarko','#7C3AED',2,214,['maths','jhs'],true,[['Abena Owusu','@abena_o','#EC4899','From eq2: x = 1 + y. Substitute into eq1: 2(1+y)+3y=12 → 2+2y+3y=12 → 5y=10 → y=2. Then x=3. Check: 2(3)+3(2)=12 ✓. Answer: x=3, y=2.',22,0,true,false],['Fiifi Hammond','@fiifi_h','#1F2937','Elimination: multiply eq2 by 2 → 2x−2y=2. Subtract from eq1 → 5y=10 → y=2, x=3.',9,0,false,false]]),
+mk('How can I start a small provisions store in Kumasi with GH₵5,000?','I have a small space at Asafo Market. What items move fast? How do I price and keep records? Any GRA requirements?','Business','Kofi Boateng','@kofib','#0EA5E9',8,1204,['business','kumasi'],true,[['Adjoa Tetteh','@adjoa_t','#006B3F','With GH₵5000: 1) Fast movers: rice (small bags), oil refill, sugar, milk, Milo, diapers, tissue, sachet water. 2) 60% stock, 20% setup, 20% reserve. 3) Price cost+10-20%, check 3 neighbours. 4) Daily book: date/item/cost/sold/profit. 5) Get free TIN from GRA. Avoid plenty credit at start!',56,2,true,true]]),
+mk('Best time to plant maize in Ashanti Region and which fertilizer?','First-time farmer, 2 acres near Ejisu. When to plant for major season? NPK or Urea?','Agriculture','Kwabena Asare','@kwabena_farms','#16A34A',12,486,['farming','maize'],false,[['Yaw Darko','@yawdarko','#7C3AED','Major season: late March–April when rains establish. Use certified seed (Obaatanpa). NPK 15-15-15 at planting (2 bags/acre), Urea top-dress at 4-6 weeks (1 bag/acre). Weed at 2 & 5 weeks. Harvest ~100-110 days.',34,1,true,false]]),
+mk('How do I register for Ghana Card and what documents do I need?','I lost my old card. Where is NIA office in Accra? Cost for replacement?','Government & Civics','Ama Serwaa','@ama_knows','#006B3F',4,967,['ghana-card','nia'],true,[['Kwame Mensah','@kwame_answers','#C8102E','NEW card: any NIA office with birth cert or passport + proof of address — free first issue. REPLACEMENT: ~GH₵34.50 via bank, plus police report to NIA Head Office (Shiashie, Accra). Takes 2-4 weeks. Check nia.gov.gh.',41,0,true,false]]),
+mk('Affordable smartphone under GH₵1,500 for online learning?','Need good battery + storage for Classroom and YouTube. Tecno, Infinix or Samsung?','Technology','Fiifi Hammond','@fiifi_h','#1F2937',6,733,['phones','learning'],false,[['Kofi Boateng','@kofib','#0EA5E9','Under GH₵1500: Tecno Spark 20 (8GB/128GB, 5000mAh ~GH₵1350) or Infinix Hot 40i (~GH₵1250). Avoid 32GB phones. Buy from accredited shops with warranty.',27,1,false,false],['Efua Amoah','@efua_e','#D97706','Prioritize 128GB + 5000mAh + 4GB RAM minimum. Also get 10000mAh power bank (~GH₵180) for dumsor.',15,0,false,false]]),
+mk('How do I write a CV that Ghanaian employers actually read?','National Service graduate, no experience. 1 or 2 pages? Photo and DOB?','Jobs & Careers','Adjoa Tetteh','@adjoa_t','#006B3F',10,1521,['cv','jobs'],false,[['Ama Serwaa','@ama_knows','#006B3F','Keep 1 page: Header (name, phone, email, location — no photo/DOB), 2-line profile, Education, NSS with RESULTS, Skills, Referees on request. PDF named "Name_CV.pdf". Tailor each application!',44,0,true,false]]),
+mk('Why does harmattan cause dry skin and what local remedies work?','Every December my skin cracks. Shea butter or coconut oil?','Science','Abena Owusu','@abena_o','#EC4899',20,342,['health','harmattan'],false,[['Efua Amoah','@efua_e','#D97706','Harmattan = dry dusty winds, humidity below 20%. Use raw shea butter (best, vitamins A/E), coconut oil for light moisture, 2L water daily, lukewarm baths, vaseline on lips/heels.',19,0,false,false]]),
+mk('Meaning behind Adinkra symbol "Gye Nyame"?','I see it on cloth and buildings. Full meaning and when is it used?','Local Culture','Kwame Mensah','@kwame_answers','#C8102E',15,589,['adinkra','akan'],false,[['Abena Owusu','@abena_o','#EC4899','"Gye Nyame" means "Except God" — no one can undo what God has destined. Used on kente, jewellery, architecture. One of 100+ Akan Adinkra symbols.',38,0,true,false]]),
+mk('How does Mobile Money interest work on MTN MoMo?','I heard you earn interest on wallet balance. How much? Do I need to register?','General Knowledge','Yaw Darko','@yawdarko','#7C3AED',3,1102,['momo','mtn'],false,[['Fiifi Hammond','@fiifi_h','#1F2937','Yes, MTN pays quarterly interest (~5-7% p.a., varies) per Bank of Ghana rules. Automatic if wallet active. Paid Mar/Jun/Sep/Dec. Don\'t keep life savings on MoMo.',29,1,false,false]]),
+mk('What taxes does a small online vendor need to pay to GRA?','I sell thrift online, ~GH₵3,000/month. Do I need TIN? VAT?','Business','Efua Amoah','@efua_e','#D97706',26,445,['tax','gra'],false,[['Adjoa Tetteh','@adjoa_t','#006B3F','Get free TIN at GRA. Below GH₵200k/year you likely fall under Presumptive Tax (~3% quarterly) not full VAT. Keep MoMo statements. Visit GRA Service Centre.',17,0,false,false]]),
+mk('Black Stars AFCON chances — honest analysis?','After qualifiers, can we qualify? What must be fixed?','Sports','Kofi Boateng','@kofib','#0EA5E9',7,890,['black-stars','afcon'],false,[['Yaw Darko','@yawdarko','#7C3AED','Honest: midfield transition is weak. Fix stable CB pairing, blood young keepers, play strong friendlies. Talent is there — Kudus top 5 in Africa. Win home games!',23,3,false,false]]),
+mk('How can I learn coding for free in Accra?','SHS graduate, no laptop yet. Where to start? Any free hubs?','Technology','Kwabena Asare','@kwabena_farms','#16A34A',30,512,['coding','free'],false,[['Kofi Boateng','@kofib','#0EA5E9','Start on phone (Mimo/Sololearn free). Then freeCodeCamp, CS50 YouTube, hubs: Ghana Tech Lab, iSpace, Developers in Vogue. Pick ONE path: Web (HTML/CSS/JS) fastest to earn.',26,0,true,false]]),
+mk('Best SHS science electives for Medicine at UG Legon?','JHS 3, want to be a doctor. What electives + grades?','Education','Adjoa Tetteh','@adjoa_t','#006B3F',9,678,['shs','medicine'],false,[['Kwame Mensah','@kwame_answers','#C8102E','Take Physics, Chemistry, Biology + Elective Maths. UG Medicine needs ~Agg 6-8 (A1 sciences). Start SHS1. Backup: KNUST, UHAS, or Physician Assistantship.',33,0,false,false]])
+];save('gae_questions2',questions);}
+if(!networks){networks=[{name:'MTN Mobile Money',code:'MTN',color:'#FFCC00',tcolor:'#000',enabled:true},{name:'Telecel Cash',code:'Telecel',color:'#E30613',tcolor:'#fff',enabled:true},{name:'AirtelTigo Money',code:'AT',color:'#0047BB',tcolor:'#fff',enabled:true}];save('gae_networks2',networks);}
+if(transactions.length===0){const t=now();transactions=[{id:uid('tx'),userId:'u_demo',type:'earn',desc:'Welcome bonus',points:10,gh:0.5,status:'Completed',date:t-40*864e5},{id:uid('tx'),userId:'u_demo',type:'earn',desc:'Accepted answer: Ghana Card guide',points:20,gh:1,status:'Completed',date:t-5*864e5},{id:uid('tx'),userId:'u_demo',type:'earn',desc:'Answer: CV writing tips',points:5,gh:0.25,status:'Completed',date:t-3*864e5},{id:uid('tx'),userId:'u_demo',type:'earn',desc:'Daily challenge reward',points:25,gh:1.25,status:'Completed',date:t-2*864e5},{id:uid('tx'),userId:'u_demo',type:'earn',desc:'High-quality bonus (5+ upvotes)',points:10,gh:0.5,status:'Pending',date:t-1*864e5},{id:uid('tx'),userId:'u_demo',type:'withdrawal',desc:'Withdrawal to MTN ••4821',points:-1000,gh:-50,status:'Completed',date:t-6*864e5,ref:'GAE-88214'}];save('gae_txs2',transactions);withdrawals=[{id:uid('wd'),userId:'u_demo',network:'MTN Mobile Money',number:'0241114821',amountGH:50,pts:1000,status:'Completed',date:t-6*864e5,ref:'GAE-88214'}];save('gae_wds2',withdrawals);notifications=[{id:uid('n'),userId:'u_demo',type:'reward',title:'+20 pts — Answer accepted! 🎉',msg:'Your Ghana Card guide was marked as best answer.',date:t-5*864e5,read:false},{id:uid('n'),userId:'u_demo',type:'withdrawal',title:'Withdrawal Completed ✓',msg:'GH₵50 sent to MTN ••4821. Ref GAE-88214.',date:t-6*864e5+36e5,read:false},{id:uid('n'),userId:'u_demo',type:'challenge',title:'New Daily Challenge ⚡',msg:'Ghana History Quiz is live. Earn +25 pts today!',date:t-1*864e5,read:false}];save('gae_notifs2',notifications);}
+}
+
+/* ============ ROUTER ============ */
+function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));const map={home:'page-home',questions:'page-questions',ask:'page-ask',earn:'page-earn',wallet:'page-wallet',profile:'page-profile',qdetail:'page-qdetail',challenge:'page-challenge',admin:'page-admin'};const el=$(map[page]||'page-home');if(el)el.classList.add('active');document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===page));window.scrollTo({top:0,behavior:'smooth'});if(page==='questions')renderQuestions();if(page==='wallet')renderWallet();if(page==='profile')renderProfile();if(page==='earn')renderEarn();if(page==='home'){renderHome();}if(page==='admin')renderAdmin();if(page==='challenge')renderQuiz();if(page==='ask')renderAskStats();}
+
+/* ============ AUTH ============ */
+function openAuth(t){$('authModal').classList.remove('hidden');$('authErr').classList.add('hidden');authTab(t||'login');}
+function closeAuth(){$('authModal').classList.add('hidden');}
+function authTab(t){const isL=t==='login';$('formLogin').classList.toggle('hidden',!isL);$('formRegister').classList.toggle('hidden',isL);$('tabLogin').className='py-2.5 rounded-xl text-sm font-extrabold '+(isL?'bg-white shadow':'text-muted');$('tabRegister').className='py-2.5 rounded-xl text-sm font-extrabold '+(!isL?'bg-white shadow':'text-muted');}
+function authError(m){const e=$('authErr');if(!m){e.classList.add('hidden');return;}e.textContent=m;e.classList.remove('hidden');}
+function validPhone(p){return /^(0)(24|25|53|54|55|59|20|50|21|23|27|57|26|56|28)\d{7}$/.test(p.replace(/\s/g,''));}
+function setLoading(id,txt){const b=$(id);if(!b)return;b.dataset.orig=b.innerHTML;b.disabled=true;b.innerHTML=`<span class="spinner"></span> ${txt||'Please wait...'}`;}
+function clearLoading(id){const b=$(id);if(!b||!b.dataset.orig)return;b.innerHTML=b.dataset.orig;b.disabled=false;}
+function doRegister(){
+authError(null);
+const name=$('rgName').value.trim(),user=$('rgUser').value.trim().replace('@',''),email=$('rgEmail').value.trim().toLowerCase(),phone=$('rgPhone').value.trim().replace(/\s/g,''),pass=$('rgPass').value,dob=$('rgDob').value,region=$('rgRegion').value,net=$('rgNetwork').value,ref=$('rgRef').value.trim().toUpperCase();
+if(!name||!user||!email||!phone||!pass||!dob||!region)return authError('Please fill all required fields.');
+if(user.length<3)return authError('Username must be 3+ characters.');
+if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email))return authError('Enter a valid email address.');
+if(!validPhone(phone))return authError('Enter valid Ghana phone (e.g. 0241234567).');
+if(pass.length<6)return authError('Password must be 6+ characters.');
+const age=(Date.now()-new Date(dob).getTime())/315576e5;if(age<13)return authError('You must be at least 13 years old.');
+if(!$('rgAge').checked)return authError('Please confirm age requirement.');
+if(!$('rgTerms').checked)return authError('Please accept Terms & Privacy.');
+if(users.some(u=>u.email===email))return authError('Email already registered. Please log in.');
+if(users.some(u=>u.username.toLowerCase()===user.toLowerCase()))return authError('Username taken. Try another.');
+if(users.some(u=>u.phone===phone))return authError('Phone already registered (anti-fraud protection).');
+setLoading('regBtn','Creating account...');
+setTimeout(()=>{
+const code=(user.slice(0,3).toUpperCase().replace(/[^A-Z]/g,'X')||'GAE')+Math.floor(1000+Math.random()*9000);
+const nu={id:uid('u'),fullName:name,username:user,email,phone,pass,dob,region,momoNetwork:net,momoNumber:phone,verified:false,ptsA:0,ptsP:10,totalGH:0,answered:0,accepted:0,badges:['welcome'],referralCode:code,referrals:[],suspended:false,joined:now(),isAdmin:false,av:AVATAR_COLORS[Math.floor(Math.random()*AVATAR_COLORS.length)],notif:true,pub:true,ref:'',refRewarded:false,daily:{date:dayKey(),n:0}};
+if(ref){const ru=users.find(u=>u.referralCode===ref);if(ru){if(ru.phone===phone||ru.email===email){toast('Self-referral blocked by anti-fraud','error');}else{nu.ref=ref;ru.referrals.push({name,pts:0,status:'Pending',date:now()});pushNotif(ru.id,'referral','New referral pending 👥',`${name} joined with your code. Earn +50 when they reach 50 pts.`);}}else toast('Referral code not found — continuing without it','info');}
+users.push(nu);transactions.push({id:uid('tx'),userId:nu.id,type:'earn',desc:'Welcome bonus 🎉',points:10,gh:0.5,status:'Pending',date:now()});pushNotif(nu.id,'reward','Welcome! +10 pts 🎉','Verify your phone to unlock withdrawals.');
+session=nu.id;persist();updateAuthUI();clearLoading('regBtn');closeAuth();toast('Account created! Verify phone to withdraw.','gold');startOTP();go('profile');
+},700);
+}
+function doLogin(){
+authError(null);
+const id=$('liId').value.trim().toLowerCase(),p=$('liPass').value;
+if(!id||!p)return authError('Enter email/username and password.');
+setLoading('loginBtn','Logging in...');
+setTimeout(()=>{const u=users.find(x=>x.email===id||x.username.toLowerCase()===id);clearLoading('loginBtn');
+if(!u||u.pass!==p)return authError('Invalid login. Check details and try again.');
+if(u.suspended)return authError('Account suspended. Contact support@ghanaanswer.com.');
+session=u.id;persist();updateAuthUI();closeAuth();toast(`Welcome back, ${esc(u.fullName.split(' ')[0])}! 👋`,'success');go('profile');},600);
+}
+function loginDemo(){session='u_demo';persist();updateAuthUI();closeAuth();toast('Logged in as Demo Account (Ama) ✨','gold');go('profile');}
+function logout(){session=null;persist();updateAuthUI();toast('Logged out. See you soon! 👋');go('home');}
+function updateAuthUI(){
+const u=me();
+if(u){$('authBtns').style.display='none';$('userChip').classList.remove('hidden');$('userChip').classList.add('flex');$('userAvatar').style.background=u.av;$('userAvatar').textContent=u.fullName.charAt(0).toUpperCase();$('userChipName').textContent=u.fullName.split(' ')[0];$('userChipPts').textContent=(u.ptsA+u.ptsP)+' pts';$('walletPillAmt').textContent=(u.ptsA*RATE).toFixed(2);}
+else{$('authBtns').style.display='flex';$('userChip').classList.add('hidden');$('userChip').classList.remove('flex');$('walletPillAmt').textContent='0.00';}
+updateNotifBadge();
+}
+
+/* ============ HOME ============ */
+function renderHome(){
+$('homeCats').innerHTML=CATS.map(([n,ic,col])=>{const c=questions.filter(q=>q.category===n).length;return `<button onclick="filterCat('${esc(n)}')" class="card card-hover p-4 text-left"><div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl border border-black/5" style="background:${col}">${ic}</div><div class="font-extrabold text-[13px] mt-2.5 leading-tight">${esc(n)}</div><div class="text-[11px] text-muted font-bold mt-0.5">${c} questions →</div></button>`;}).join('');
+const feat=questions.filter(q=>q.featured).slice(0,4);
+$('featuredList').innerHTML=feat.length?feat.map(qCard).join(''):emptyHTML('No featured questions yet','Check back soon for trending topics.');
+updateChallengeBars();
+renderHomeBoard(boardMode);
+}
+function qCard(q){
+const ups=q.answers.reduce((s,a)=>s+a.up,0);
+return `<div class="card qcard p-5 cursor-pointer" onclick="openQuestion('${q.id}')">
+<div class="flex items-center gap-2 flex-wrap"><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border border-line" style="background:${catColor(q.category)}">${catIcon(q.category)} ${esc(q.category)}</span><span class="text-[11px] text-muted font-semibold">• ${timeAgo(q.date)} • 👁 ${q.views}</span>${q.answers.some(a=>a.accepted)?'<span class="text-[10px] font-extrabold bg-brandLight text-brand px-2 py-1 rounded-full">✓ Solved</span>':''}</div>
+<h3 class="font-extrabold text-[15px] leading-snug mt-2.5">${esc(q.title)}</h3>
+<p class="text-[13px] text-muted mt-1.5 line-clamp-2">${esc(q.details)}</p>
+<div class="flex items-center justify-between mt-3 pt-3 border-t border-line">
+<div class="flex items-center gap-2"><span class="avatar !w-8 !h-8 !rounded-full !text-[11px]" style="background:${q.author.av}">${esc(q.author.name.charAt(0))}</span><span class="text-xs font-bold">${esc(q.author.name)}</span></div>
+<div class="flex items-center gap-3 text-[12px] font-bold text-muted"><span>💬 ${q.answers.length}</span><span>▲ ${ups}</span><span class="text-brand">Answer →</span></div>
+</div></div>`;
+}
+function emptyHTML(t,s,btn){return `<div class="col-span-full card p-10 text-center"><div class="w-16 h-16 mx-auto rounded-2xl bg-surface flex items-center justify-center text-3xl">🔍</div><div class="font-extrabold mt-3">${t}</div><div class="text-sm text-muted mt-1">${s||''}</div>${btn||''}</div>`;}
+function boardRow(r,i,val){
+const medals=['🥇','🥈','🥉'];
+return `<div class="flex items-center gap-3 bg-surface border border-line rounded-2xl p-3">
+<div class="w-9 h-9 rounded-xl bg-white border border-line flex items-center justify-center font-extrabold text-sm shrink-0">${medals[i]||(i+1)}</div>
+<div class="avatar !rounded-full" style="background:${r.av}">${esc(r.name.charAt(0))}</div>
+<div class="flex-1 min-w-0"><div class="font-extrabold text-[13px] truncate">${esc(r.name)}</div><div class="text-[11px] text-muted font-medium">${esc(r.user)} • ${esc(r.region)} • ✓${r.acc}</div></div>
+<div class="text-right shrink-0"><div class="font-display font-extrabold text-brand">${val.toLocaleString()}</div><div class="text-[10px] text-muted font-bold">points</div></div>
+</div>`;
+}
+function renderHomeBoard(mode){
+boardMode=mode;
+$('lbW1').className='text-xs font-extrabold px-4 py-2 rounded-full '+(mode==='weekly'?'bg-ink text-white':'bg-surface border border-line');
+$('lbM1').className='text-xs font-extrabold px-4 py-2 rounded-full '+(mode==='monthly'?'bg-ink text-white':'bg-surface border border-line');
+let html=DEMO_BOARD.slice(0,5).map((r,i)=>boardRow(r,i,mode==='weekly'?r.w:r.m)).join('');
+const u=me();if(u){html+=`<div class="flex items-center gap-3 bg-brandLight border border-brand/30 rounded-2xl p-3"><div class="avatar !rounded-full" style="background:${u.av}">${esc(u.fullName.charAt(0))}</div><div class="flex-1"><div class="font-extrabold text-[13px]">You • ${esc(u.fullName.split(' ')[0])}</div><div class="text-[11px] text-muted">Keep answering to climb!</div></div><div class="font-display font-extrabold text-brand">${(u.ptsA+u.ptsP).toLocaleString()}</div></div>`;}
+$('homeBoard').innerHTML=html;
+}
+function chalProgress(){
+const u=me();if(!u)return{k:0,done:0,score:0};
+const k=u.id+'_'+dayKey();const s=chalState[k]||{done:0,score:0};
+return{k,done:s.done||0,score:s.score||0,claimed:!!s.claimed};
+}
+function updateChallengeBars(){
+const p=chalProgress();
+const pct=(p.done/5*100)||0;
+if($('homeChallengeBar')){$('homeChallengeBar').style.width=pct+'%';$('homeChallengeTxt').textContent=`${p.done}/5 done`;}
+if($('earnChalBar')){$('earnChalBar').style.width=pct+'%';$('earnChalTxt').textContent=`${p.done}/5 completed`;if($('earnChalScore'))$('earnChalScore').textContent=p.score;}
+}
+
+/* ============ QUESTIONS ============ */
+function filterCat(c){selectedCat=c;go('questions');}
+function setCat(c){selectedCat=c;renderQuestions();}
+function renderQuestions(){
+const s=($('qSearch').value||'').toLowerCase(),sort=$('qSort').value;
+let chips=`<button onclick="setCat('All')" class="chip ${selectedCat==='All'?'active':''}">All</button>`+CATS.map(([n,ic])=>`<button onclick="setCat('${esc(n)}')" class="chip ${selectedCat===n?'active':''}">${ic} ${esc(n)}</button>`).join('');
+$('catChips').innerHTML=chips;
+let list=questions.filter(q=>(selectedCat==='All'||q.category===selectedCat)&&(!s||(q.title+' '+q.details+' '+(q.tags||[]).join(' ')).toLowerCase().includes(s)));
+if(sort==='popular')list=[...list].sort((a,b)=>b.answers.length-a.answers.length);
+else if(sort==='unanswered')list=[...list].sort((a,b)=>a.answers.length-b.answers.length||b.date-a.date);
+else list=[...list].sort((a,b)=>b.date-a.date);
+$('qCount').textContent=list.length?`Showing ${list.length} question${list.length>1?'s':''}${selectedCat!=='All'?' in '+selectedCat:''}`:'';
+$('qList').innerHTML=list.length?list.map(qCard).join(''):emptyHTML('No questions found','Try a different keyword or category.','<button onclick="clearQFilter()" class="btn btn-soft btn-sm mt-4">Clear filters</button>');
+}
+function clearQFilter(){$('qSearch').value='';selectedCat='All';renderQuestions();}
+
+/* ============ ASK ============ */
+function renderAskStats(){
+const u=me();if(!u){$('askStats').textContent='Log in to track your questions.';return;}
+const mine=questions.filter(q=>q.authorId===u.id);
+$('askStats').innerHTML=`<div class="grid grid-cols-3 gap-2 text-center mt-1"><div class="bg-surface rounded-xl p-2"><div class="font-extrabold">${mine.length}</div><div class="text-[10px] text-muted font-bold">Asked</div></div><div class="bg-surface rounded-xl p-2"><div class="font-extrabold">${mine.reduce((s,q)=>s+q.answers.length,0)}</div><div class="text-[10px] text-muted font-bold">Replies</div></div><div class="bg-surface rounded-xl p-2"><div class="font-extrabold">${mine.filter(q=>q.answers.some(a=>a.accepted)).length}</div><div class="text-[10px] text-muted font-bold">Solved</div></div></div>`;
+}
+function submitQuestion(){
+const u=me();if(!u)return openAuth('register');
+const title=$('askTitle').value.trim(),cat=$('askCat').value,tags=$('askTags').value.split(',').map(t=>t.trim()).filter(Boolean).slice(0,5),det=$('askDetails').value.trim();
+[$('askTitle'),$('askDetails')].forEach(i=>i.classList.remove('input-err'));
+if(title.length<10){$('askTitle').classList.add('input-err');return toast('Title must be at least 10 characters','error');}
+if(det.length<20){$('askDetails').classList.add('input-err');return toast('Details must be at least 20 characters','error');}
+const today=questions.filter(q=>q.authorId===u.id&&new Date(q.date).toDateString()===new Date().toDateString()).length;
+if(today>=10)return toast('Daily limit reached (10/day)','error');
+setLoading('askBtn','Posting...');
+setTimeout(()=>{questions.unshift({id:uid('q'),title,details:det,category:cat,author:{name:u.fullName,user:'@'+u.username,av:u.av},authorId:u.id,date:now(),views:0,tags,featured:false,answers:[]});persist();clearLoading('askBtn');$('askTitle').value='';$('askDetails').value='';$('askTags').value='';$('askCount').textContent='0';toast('Question posted! 🎉','success');go('questions');},600);
+}
+
+/* ============ QDETAIL ============ */
+function openQuestion(id){currentQ=id;renderQDetail();go('qdetail');}
+function renderQDetail(){
+const q=questions.find(x=>x.id===currentQ);if(!q){$('qdWrap').innerHTML=emptyHTML('Question not found','It may have been removed.');return;}
+q.views=(q.views||0)+1;persist();
+const u=me();const isAsker=u&&(q.authorId===u.id||q.author.user==='@'+u.username);
+const sorted=[...q.answers].sort((a,b)=>(b.accepted-a.accepted)||(b.up-b.down)-(a.up-a.down));
+$('qdWrap').innerHTML=`
+<div class="card p-5 md:p-7">
+<div class="flex items-center gap-2 flex-wrap"><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full border border-line" style="background:${catColor(q.category)}">${catIcon(q.category)} ${esc(q.category)}</span><span class="text-[11px] text-muted font-semibold">${timeAgo(q.date)} • 👁 ${q.views} views</span></div>
+<h1 class="font-display font-extrabold text-xl md:text-2xl mt-3 leading-snug">${esc(q.title)}</h1>
+<p class="text-[15px] text-gray-700 mt-3 leading-relaxed whitespace-pre-line">${esc(q.details)}</p>
+${(q.tags||[]).length?`<div class="flex gap-1.5 flex-wrap mt-3">${q.tags.map(t=>`<span class="text-[11px] font-bold bg-surface border border-line px-2.5 py-1 rounded-full">#${esc(t)}</span>`).join('')}</div>`:''}
+<div class="flex items-center justify-between mt-4 pt-4 border-t border-line">
+<div class="flex items-center gap-2"><span class="avatar !rounded-full" style="background:${q.author.av}">${esc(q.author.name.charAt(0))}</span><div><div class="text-[13px] font-extrabold">${esc(q.author.name)}</div><div class="text-[11px] text-muted">${esc(q.author.user)}</div></div></div>
+<div class="flex gap-2"><button onclick="openReport('question','${q.id}')" class="text-[12px] font-bold text-muted hover:text-danger px-3 py-2 rounded-full hover:bg-red-50">🚩 Report</button></div>
+</div></div>
+<div class="flex items-center justify-between mt-5"><h3 class="font-display font-extrabold text-lg">${q.answers.length} Answer${q.answers.length!==1?'s':''}</h3><span class="text-xs text-muted font-semibold">+5 pts per helpful answer</span></div>
+<div class="space-y-3 mt-3">${sorted.length?sorted.map(a=>answerHTML(q,a,isAsker)).join(''):emptyHTML('No answers yet','Be the first to help and earn +5 pts!')}</div>
+<div class="card p-5 md:p-6 mt-4">
+<h3 class="font-extrabold">Your Answer 💡</h3>
+${u?`<textarea id="ansText" rows="4" placeholder="Share a clear, helpful answer (min 20 characters). No copy-paste..." class="input mt-3"></textarea><button onclick="submitAnswer('${q.id}')" id="ansBtn" class="btn btn-primary w-full mt-3">Post Answer • +5 pts</button><p class="text-[11px] text-muted mt-2 text-center">Quality answers get upvoted (+10 bonus) and accepted (+20).</p>`:`<div class="mt-3 bg-surface border border-line rounded-2xl p-5 text-center"><p class="text-sm text-muted font-medium">Log in to answer and earn points.</p><button onclick="openAuth('login')" class="btn btn-dark btn-sm mt-3">Log In / Join Free</button></div>`}
+</div>`;
+}
+function answerHTML(q,a,isAsker){
+const u=me();const myVote=u&&a.voters[u.id];
+return `<div class="card p-5 ${a.accepted?'!border-brand !ring-2 !ring-brand/15':''}">
+${a.accepted?'<div class="inline-flex items-center gap-1.5 bg-brand text-white text-[11px] font-extrabold px-3 py-1 rounded-full mb-2">✓ ACCEPTED ANSWER</div>':''}
+${a.bonus?'<div class="inline-flex items-center gap-1.5 bg-purple-100 text-purple-800 text-[11px] font-extrabold px-3 py-1 rounded-full mb-2 ml-1">⭐ QUALITY BONUS</div>':''}
+<div class="flex items-center gap-2"><span class="avatar !rounded-full !w-9 !h-9 !text-xs" style="background:${a.av}">${esc(a.author.charAt(0))}</span><div><div class="text-[13px] font-extrabold">${esc(a.author)}</div><div class="text-[11px] text-muted">${esc(a.user)} • ${timeAgo(a.date)}</div></div></div>
+<p class="text-[14.5px] text-gray-700 mt-3 leading-relaxed whitespace-pre-line">${esc(a.text)}</p>
+<div class="flex items-center gap-2 mt-4 flex-wrap">
+<button onclick="voteAnswer('${q.id}','${a.id}',1)" class="flex items-center gap-1.5 text-[13px] font-extrabold px-3.5 py-2 rounded-full border ${myVote===1?'bg-brand text-white border-brand':'bg-surface border-line'}">▲ ${a.up}</button>
+<button onclick="voteAnswer('${q.id}','${a.id}',-1)" class="flex items-center gap-1.5 text-[13px] font-extrabold px-3.5 py-2 rounded-full border ${myVote===-1?'bg-ink text-white border-ink':'bg-surface border-line'}">▼ ${a.down}</button>
+${isAsker&&!a.accepted?`<button onclick="acceptAnswer('${q.id}','${a.id}')" class="text-[12px] font-extrabold px-4 py-2 rounded-full bg-gold">✓ Accept (+20 to helper)</button>`:''}
+<button onclick="openReport('answer','${q.id}','${a.id}')" class="ml-auto text-[12px] font-bold text-muted hover:text-danger px-2 py-1">🚩</button>
+</div></div>`;
+}
+function submitAnswer(qid){
+const u=me();if(!u)return openAuth('login');
+const t=$('ansText').value.trim();
+if(t.length<20){$('ansText').classList.add('input-err');return toast('Answer must be at least 20 characters','error');}
+const q=questions.find(x=>x.id===qid);if(!q)return;
+if(q.authorId===u.id)return toast('You cannot answer your own question','error');
+if(q.answers.some(a=>a.userId===u.id))return toast('You already answered this question','error');
+setLoading('ansBtn','Posting...');
+setTimeout(()=>{q.answers.push({id:uid('a'),author:u.fullName,user:'@'+u.username,av:u.av,userId:u.id,text:t,up:0,down:0,date:now(),accepted:false,bonus:false,voters:{}});awardPoints(u.id,5,'Answer: '+q.title.slice(0,40));u.answered++;if(u.daily.date!==dayKey())u.daily={date:dayKey(),n:0};u.daily.n++;checkBadges(u);persist();updateAuthUI();toast('Answer posted! +5 pts 🎉','success');renderQDetail();},500);
+}
+function voteAnswer(qid,aid,dir){
+const u=me();if(!u)return openAuth('login');
+const q=questions.find(x=>x.id===qid);const a=q.answers.find(x=>x.id===aid);
+if(a.userId===u.id)return toast('You cannot vote on your own answer','error');
+const prev=a.voters[u.id]||0;
+if(prev===dir){if(dir===1)a.up--;else a.down--;delete a.voters[u.id];}
+else{if(prev===1)a.up--;if(prev===-1)a.down--;if(dir===1)a.up++;else a.down++;a.voters[u.id]=dir;
+if(a.up>=5&&!a.bonus){a.bonus=true;const au=users.find(x=>x.id===a.userId);if(au){awardPoints(au.id,10,'High-quality bonus (5+ upvotes)');pushNotif(au.id,'reward','Quality bonus! +10 ⭐','Your answer hit 5+ upvotes.');}}}
+persist();renderQDetail();
+}
+function acceptAnswer(qid,aid){
+const u=me();const q=questions.find(x=>x.id===qid);if(!q)return;
+const isAsker=u&&(q.authorId===u.id||q.author.user==='@'+u.username||u.isAdmin);
+if(!isAsker)return toast('Only the asker can accept an answer','error');
+q.answers.forEach(a=>a.accepted=false);
+const a=q.answers.find(x=>x.id===aid);a.accepted=true;
+const au=users.find(x=>x.id===a.userId);
+if(au){awardPoints(au.id,20,'Accepted answer: '+q.title.slice(0,40));au.accepted++;checkBadges(au);pushNotif(au.id,'reward','+20 pts — Answer accepted! 🎉','Your answer was marked as best.');}
+else toast('Answer marked as accepted ✓','success');
+persist();updateAuthUI();renderQDetail();
+}
+
+/* ============ POINTS / BADGES ============ */
+function awardPoints(uid_,pts,desc){
+const u=users.find(x=>x.id===uid_);if(!u)return;
+u.ptsP+=pts;transactions.push({id:uid('tx'),userId:u.id,type:'earn',desc,points:pts,gh:+(pts*RATE).toFixed(2),status:'Pending',date:now()});
+if(u.ref&&!u.refRewarded&&(u.ptsA+u.ptsP)>=50){u.refRewarded=true;const r=users.find(x=>x.referralCode===u.ref);if(r){const rec=r.referrals.find(x=>x.status==='Pending');if(rec){rec.status='Successful';rec.pts=50;}r.ptsP+=50;transactions.push({id:uid('tx'),userId:r.id,type:'earn',desc:'Referral reward: '+u.fullName,points:50,gh:2.5,status:'Pending',date:now()});pushNotif(r.id,'referral','Referral success! +50 👥',`${u.fullName} reached 50 pts. You earned +50.`);u.ptsP+=25;transactions.push({id:uid('tx'),userId:u.id,type:'earn',desc:'Referral welcome bonus',points:25,gh:1.25,status:'Pending',date:now()});}}
+checkBadges(u);persist();
+}
+function checkBadges(u){
+const has=id=>u.badges.includes(id);const add=id=>{if(!has(id)){u.badges.push(id);pushNotif(u.id,'reward',`Badge unlocked! ${BADGES.find(b=>b[0]===id)[2]} 🎖️`,BADGES.find(b=>b[0]===id)[3]);}};
+if(u.answered>=1)add('first');if(u.answered>=10)add('helper10');if(u.accepted>=1)add('accepted');if(u.accepted>=5)add('ace5');if(u.totalGH>=50||(u.ptsA+u.ptsP)*RATE>=50)add('earner');if(u.referrals.some(r=>r.status==='Successful'))add('refer');
+}
+
+/* ============ EARN ============ */
+function switchEarnTab(t){document.querySelectorAll('.earn-tab').forEach(b=>b.classList.toggle('on',b.dataset.earn===t));['rewards','challenge','board','badges','refer'].forEach(x=>$('earn-'+x).classList.toggle('hidden',x!==t));}
+function renderEarn(){
+const u=me();
+$('earnMyPts').textContent=u?((u.ptsA+u.ptsP).toLocaleString()+' pts'):'0 pts';
+$('earnMyGH').textContent=u?(`≈ ${gh(u.ptsA*RATE)} available`):'≈ GH₵0.00 available';
+const pct=u?Math.min(100,(u.ptsA/1000*100)):5;$('earnNextBar').style.width=pct+'%';
+$('earnNextTxt').textContent=u?(u.ptsA>=1000?'🎉 You reached GH₵50 minimum!':`Earn ${(1000-u.ptsA).toLocaleString()} more pts to reach GH₵50`):'Earn to reach GH₵50 minimum';
+calcConvert();updateChallengeBars();renderFullBoard(fullMode);renderBadges();renderWeek();renderReferrals();
+}
+function calcConvert(){let p=Math.max(0,parseInt($('calcPts').value||0));$('calcGH').textContent=gh(p*RATE);const s=$('calcSlider');if(s&&document.activeElement!==$('calcPts'))s.value=Math.min(5000,p);}
+function renderFullBoard(mode){
+fullMode=mode;
+$('lbW2').className='text-xs font-extrabold px-4 py-2 rounded-full '+(mode==='weekly'?'bg-ink text-white':'bg-surface border border-line');
+$('lbM2').className='text-xs font-extrabold px-4 py-2 rounded-full '+(mode==='monthly'?'bg-ink text-white':'bg-surface border border-line');
+$('fullBoard').innerHTML=DEMO_BOARD.map((r,i)=>boardRow(r,i,mode==='weekly'?r.w:r.m)).join('');
+}
+function renderWeek(){$('weekChal').innerHTML=WEEK.map(([d,t,s])=>`<div class="flex items-center justify-between bg-surface border border-line rounded-xl p-3"><div><div class="font-extrabold text-[13px]">${d} • ${t}</div></div><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-full ${s==='done'?'bg-brandLight text-brand':s==='today'?'bg-gold text-ink':'bg-gray-100 text-muted'}">${s==='done'?'✓ +25':s==='today'?'TODAY':'Locked'}</span></div>`).join('');}
+function userBadges(){const u=me();return u?u.badges:[];}
+function renderBadges(){
+const mine=userBadges();
+$('badgeGrid').innerHTML=BADGES.map(([id,ic,nm,ds])=>{const un=mine.includes(id);return `<div class="card p-4 text-center ${un?'!border-brand/40':''} ${un?'':'opacity-60'}"><div class="text-3xl ${un?'':'grayscale'}">${ic}</div><div class="font-extrabold text-[13px] mt-2">${nm}</div><div class="text-[11px] text-muted mt-0.5">${ds}</div><div class="mt-2 text-[10px] font-extrabold px-2 py-1 rounded-full inline-block ${un?'bg-brandLight text-brand':'bg-surface text-muted border border-line'}">${un?'UNLOCKED':'LOCKED'}</div></div>`;}).join('');
+}
+function renderReferrals(){
+const u=me();
+if(!u){$('refCode').textContent='—';$('refLink').textContent='Log in to get your link';$('refCount').textContent='0';$('refPending').textContent='0';$('refEarned').textContent='0';$('refList').textContent='Log in to track referrals.';return;}
+$('refCode').textContent=u.referralCode;$('refLink').textContent='https://ghanaanswer.com/r/'+u.referralCode;
+$('refCount').textContent=u.referrals.filter(r=>r.status==='Successful').length;
+$('refPending').textContent=u.referrals.filter(r=>r.status==='Pending').length;
+$('refEarned').textContent=u.referrals.filter(r=>r.status==='Successful').length*50;
+$('refList').innerHTML=u.referrals.length?u.referrals.map(r=>`<div class="flex items-center justify-between bg-surface border border-line rounded-xl p-2.5 mt-1.5"><span class="font-bold text-[13px]">${esc(r.name)}</span><span class="text-[11px] font-extrabold px-2 py-1 rounded-full ${r.status==='Successful'?'bg-brandLight text-brand':'bg-goldSoft text-goldDeep'}">${r.status}</span></div>`).join(''):'No referrals yet. Share to start earning!';
+}
+function copyRef(t){const u=me();if(!u)return openAuth('login');const v=t==='code'?u.referralCode:'https://ghanaanswer.com/r/'+u.referralCode;(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>toast('Copied to clipboard ✓','success')).catch(()=>{prompt('Copy your referral:',v);});}
+function shareRef(p){const u=me();if(!u)return openAuth('login');const msg=encodeURIComponent(`Join Ghana Answer & Earn with my code ${u.referralCode} and we both earn! https://ghanaanswer.com/r/${u.referralCode}`);if(p==='whatsapp')window.open('https://wa.me/?text='+msg,'_blank');else if(p==='x')window.open('https://twitter.com/intent/tweet?text='+msg,'_blank');else window.location.href='sms:?body='+msg;}
+
+/* ============ WALLET ============ */
+function setTxFilter(f){txFilter=f;document.querySelectorAll('.txf').forEach(b=>b.classList.toggle('on',b.dataset.f===f));renderWalletList();}
+function renderWallet(){
+const u=me();
+if(!u){$('walletGuest').classList.remove('hidden');$('walletMain').classList.add('hidden');return;}
+$('walletGuest').classList.add('hidden');$('walletMain').classList.remove('hidden');
+$('wAvail').textContent=gh(u.ptsA*RATE);$('wAvailPts').textContent=`${u.ptsA.toLocaleString()} pts • Ready to withdraw`;
+$('wPend').textContent=gh(u.ptsP*RATE);$('wPendPts').textContent=`${u.ptsP.toLocaleString()} pts • Verifying 24–48hrs`;
+$('wTotal').textContent=gh(u.totalGH);$('wTotalPts').textContent='Lifetime • All time';
+renderWalletList();
+const mine=withdrawals.filter(w=>w.userId===u.id).sort((a,b)=>b.date-a.date);
+$('wdList').innerHTML=mine.length?mine.map(w=>`<div class="bg-surface border border-line rounded-xl p-3"><div class="flex justify-between items-center"><strong class="text-[13px]">${gh(w.amountGH)}</strong><span class="status status-${w.status}"><i></i>${w.status}</span></div><div class="text-[11px] text-muted mt-1 font-medium">${esc(w.network)} ••${esc(w.number.slice(-4))} • ${timeAgo(w.date)}</div><div class="text-[11px] font-mono text-muted">${esc(w.ref)}</div></div>`).join(''):'<div class="text-[13px] text-muted text-center py-4">No withdrawals yet.<br/>Reach GH₵50 to cash out.</div>';
+}
+function renderWalletList(){
+const u=me();if(!u)return;
+let list=transactions.filter(t=>t.userId===u.id).sort((a,b)=>b.date-a.date);
+if(txFilter!=='all')list=list.filter(t=>t.type===txFilter);
+$('txList').innerHTML=list.length?list.map(t=>`<div class="flex items-center gap-3 bg-surface border border-line rounded-2xl p-3">
+<span class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${t.type==='earn'?'bg-brandLight text-brand':'bg-red-50 text-danger'} font-extrabold">${t.type==='earn'?'↓':'↑'}</span>
+<div class="flex-1 min-w-0"><div class="font-bold text-[13px] truncate">${esc(t.desc)}</div><div class="text-[11px] text-muted">${timeAgo(t.date)} ${t.ref?'• '+esc(t.ref):''}</div></div>
+<div class="text-right shrink-0"><div class="font-extrabold text-[13px] ${t.points>=0?'text-brand':'text-danger'}">${t.points>=0?'+':''}${t.points} pts</div><span class="status status-${t.status} !text-[10px] !py-0.5"><i></i>${t.status}</span></div>
+</div>`).join(''):`<div class="text-center py-10"><div class="w-14 h-14 mx-auto rounded-2xl bg-white border border-line flex items-center justify-center text-2xl">🧾</div><div class="font-extrabold text-sm mt-3">No transactions yet</div><div class="text-xs text-muted mt-1">Answer questions to start earning.</div><button onclick="go('questions')" class="btn btn-primary btn-sm mt-3">Start Earning</button></div>`;
+}
+
+/* ============ PROFILE ============ */
+function renderProfile(){
+const u=me();
+if(!u){$('profileGuest').classList.remove('hidden');$('profileMain').classList.add('hidden');return;}
+$('profileGuest').classList.add('hidden');$('profileMain').classList.remove('hidden');
+$('pAvatar').style.background=u.av;$('pAvatar').textContent=u.fullName.charAt(0).toUpperCase();
+$('pName').textContent=u.fullName;
+$('pVerified').textContent=u.verified?'✓ Verified':'⚠ Unverified';$('pVerified').className=u.verified?'bg-white/20 text-[10px] font-bold px-2 py-1 rounded-full':'bg-gold text-ink text-[10px] font-bold px-2 py-1 rounded-full';
+$('pAdminBadge').classList.toggle('hidden',!u.isAdmin);$('adminBtn').classList.toggle('hidden',!u.isAdmin);
+$('pMeta').textContent=`@${u.username} • ${u.region} • Joined ${new Date(u.joined).toLocaleDateString()}`;
+$('pBadges').innerHTML=u.badges.slice(0,4).map(b=>{const f=BADGES.find(x=>x[0]===b);return f?`<span class="bg-white/20 text-[10px] font-bold px-2 py-1 rounded-full">${f[1]} ${f[2]}</span>`:'';}).join('')||'<span class="text-[11px] opacity-70">No badges yet</span>';
+$('dAvail').textContent=gh(u.ptsA*RATE);$('dPend').textContent=gh(u.ptsP*RATE);$('dTotal').textContent=gh(u.totalGH);
+$('dAnswered').textContent=u.answered;$('dAccepted').textContent=u.accepted;
+const dn=u.daily.date===dayKey()?u.daily.n:0;$('dProgTxt').textContent=dn+'/5';$('dProgBar').style.width=Math.min(100,dn/5*100)+'%';
+$('setNetwork').innerHTML=networks.filter(n=>n.enabled).map(n=>`<option ${u.momoNetwork===n.name?'selected':''}>${n.name}</option>`).join('');
+$('setMomoNum').value=u.momoNumber||'';$('setNotif').checked=!!u.notif;$('setPublic').checked=!!u.pub;
+$('verifyBtn2').textContent=u.verified?'✓ Phone Verified':'Verify Phone';
+$('pBadgeDetail').innerHTML=BADGES.map(([id,ic,nm])=>{const un=u.badges.includes(id);return `<div class="rounded-xl p-2.5 text-center border ${un?'bg-brandLight border-brand/30':'bg-surface border-line opacity-60'}"><div class="text-xl ${un?'':'grayscale'}">${ic}</div><div class="text-[10px] font-extrabold mt-1">${nm}</div></div>`;}).join('');
+showMyContent(myTab);
+}
+function showMyContent(t){
+myTab=t;const u=me();if(!u)return;
+$('myContentTitle').textContent=t==='answers'?'My Answers':'My Questions';
+if(t==='answers'){
+const ans=[];questions.forEach(q=>q.answers.filter(a=>a.userId===u.id).forEach(a=>ans.push({q,a})));
+$('myContent').innerHTML=ans.length?ans.sort((a,b)=>b.a.date-a.a.date).map(({q,a})=>`<div class="bg-surface border border-line rounded-2xl p-3 cursor-pointer hover:border-brand/40" onclick="openQuestion('${q.id}')"><div class="text-[12px] font-bold line-clamp-2">Q: ${esc(q.title)}</div><div class="text-[12px] text-muted mt-1 line-clamp-2">A: ${esc(a.text)}</div><div class="flex gap-2 mt-2 items-center"><span class="text-[11px] font-bold">▲ ${a.up}</span>${a.accepted?'<span class="text-[10px] font-extrabold bg-brandLight text-brand px-2 py-0.5 rounded-full">✓ Accepted +20</span>':''}<span class="text-[11px] text-muted ml-auto">${timeAgo(a.date)}</span></div></div>`).join(''):`<div class="text-center py-8 text-sm text-muted">No answers yet.<br/><button onclick="go('questions')" class="btn btn-primary btn-sm mt-3">Answer & Earn +5 pts</button></div>`;
+}else{
+const mine=questions.filter(q=>q.authorId===u.id).sort((a,b)=>b.date-a.date);
+$('myContent').innerHTML=mine.length?mine.map(q=>`<div class="bg-surface border border-line rounded-2xl p-3 cursor-pointer hover:border-brand/40" onclick="openQuestion('${q.id}')"><div class="text-[13px] font-bold line-clamp-2">${esc(q.title)}</div><div class="text-[11px] text-muted mt-1">💬 ${q.answers.length} answers • 👁 ${q.views} • ${timeAgo(q.date)}</div></div>`).join(''):`<div class="text-center py-8 text-sm text-muted">No questions yet.<br/><button onclick="go('ask')" class="btn btn-primary btn-sm mt-3">Ask a Question</button></div>`;
+}
+}
+function updateSettings(){const u=me();if(!u)return;u.momoNetwork=$('setNetwork').value;u.momoNumber=$('setMomoNum').value.trim();u.notif=$('setNotif').checked;u.pub=$('setPublic').checked;persist();toast('Settings saved ✓','success');}
+
+/* ============ OTP ============ */
+function startOTP(){
+const u=me();if(!u)return openAuth('login');
+if(u.verified)return toast('Phone already verified ✓','success');
+otpCode=String(Math.floor(100000+Math.random()*900000));
+$('otpPhone').textContent=u.phone;$('otpCodeShow').textContent=otpCode;$('otpInput').value='';
+$('otpModal').classList.remove('hidden');
+}
+function verifyOTP(){
+const u=me();if($('otpInput').value.trim()===otpCode){u.verified=true;persist();$('otpModal').classList.add('hidden');updateAuthUI();toast('Phone verified! Withdrawals unlocked ✓','success');renderProfile();}
+else toast('Incorrect code. Try again.','error');
+}
+
+/* ============ WITHDRAW ============ */
+function openWithdraw(){
+const u=me();if(!u)return openAuth('login');
+if(!u.verified){toast('Verify your phone first','error');return startOTP();}
+if(withdrawals.some(w=>w.userId===u.id&&(w.status==='Pending'||w.status==='Processing')))return toast('You already have a pending request','error');
+$('wdNetwork').innerHTML=networks.filter(n=>n.enabled).map(n=>`<option ${u.momoNetwork===n.name?'selected':''}>${n.name}</option>`).join('');
+$('wdNumber').value=u.momoNumber||u.phone||'';$('wdAmount').value='';$('wdErr').classList.add('hidden');
+$('wdAvailTxt').textContent=gh(u.ptsA*RATE);updWdPts();
+$('wdStep1').classList.remove('hidden');$('wdStep2').classList.add('hidden');$('wdStep3').classList.add('hidden');
+$('wdModal').classList.remove('hidden');
+}
+function closeWithdraw(){$('wdModal').classList.add('hidden');}
+function setWd(v){$('wdAmount').value=v;updWdPts();}
+function updWdPts(){const v=parseFloat($('wdAmount').value||50);$('wdPtsPreview').textContent=(v*20).toLocaleString()+' pts';}
+function wdError(m){const e=$('wdErr');if(!m){e.classList.add('hidden');return;}e.textContent=m;e.classList.remove('hidden');}
+function withdrawPreview(){
+wdError(null);const u=me();
+const net=$('wdNetwork').value,num=$('wdNumber').value.trim().replace(/\s/g,''),amt=parseFloat($('wdAmount').value);
+if(!net)return wdError('Select MoMo network.');
+if(!validPhone(num))return wdError('Enter valid MoMo number (e.g. 0241234567).');
+if(!amt||amt<cfg.min)return wdError(`Minimum withdrawal is GH₵${cfg.min}.`);
+if(amt>cfg.max)return wdError(`Daily maximum is GH₵${cfg.max}.`);
+if(amt>u.ptsA*RATE)return wdError('Insufficient Available balance. Pending points cannot be withdrawn.');
+const pts=Math.round(amt*20);
+pendingWd={network:net,number:num,amountGH:amt,pts,ref:'GAE-'+Math.floor(10000+Math.random()*89999)};
+$('cfNet').textContent=net;$('cfNum').textContent=num;$('cfAmt').textContent=gh(amt);$('cfPts').textContent=pts.toLocaleString()+' pts';$('cfRef').textContent=pendingWd.ref;
+$('wdStep1').classList.add('hidden');$('wdStep2').classList.remove('hidden');
+}
+function wdBack(){$('wdStep2').classList.add('hidden');$('wdStep1').classList.remove('hidden');}
+function submitWithdraw(){
+const u=me();if(!pendingWd||!u)return;
+setLoading('wdSubmitBtn','Submitting...');
+setTimeout(()=>{u.ptsA-=pendingWd.pts;withdrawals.unshift({id:uid('wd'),userId:u.id,...pendingWd,status:'Pending',date:now()});transactions.push({id:uid('tx'),userId:u.id,type:'withdrawal',desc:`Withdrawal to ${pendingWd.network.split(' ')[0]} ••${pendingWd.number.slice(-4)}`,points:-pendingWd.pts,gh:-pendingWd.amountGH,status:'Pending',date:now(),ref:pendingWd.ref});pushNotif(u.id,'withdrawal','Withdrawal request received ⏳',`${gh(pendingWd.amountGH)} to ${pendingWd.network}. Ref ${pendingWd.ref}.`);persist();updateAuthUI();clearLoading('wdSubmitBtn');$('doneRef').textContent=pendingWd.ref;$('doneAmt').textContent=gh(pendingWd.amountGH);$('wdStep2').classList.add('hidden');$('wdStep3').classList.remove('hidden');pendingWd=null;},800);
+}
+
+/* ============ QUIZ ============ */
+function renderQuiz(){
+clearInterval(quizTimer);
+const box=$('quizBox');const u=me();
+const key=(u?u.id:'guest')+'_'+dayKey();
+const st=chalState[key]||{done:0,score:0,claimed:false};
+if(st.claimed||st.done>=5){
+const win=st.score>=3;
+box.innerHTML=`<div class="text-center py-4"><div class="check-pop w-20 h-20 mx-auto rounded-full ${win?'bg-gold':'bg-white/15'} flex items-center justify-center text-4xl">${win?'🏆':'📝'}</div><h3 class="font-display font-extrabold text-2xl mt-4">${win?'Challenge complete! +25 pts 🎉':'Challenge complete'}</h3><p class="text-white/70 text-sm mt-2">You scored <strong class="text-white">${st.score}/5</strong> today.${win?' Reward added to Pending balance.':''}<br/>Come back tomorrow for a new quiz.</p><div class="flex gap-2 justify-center mt-5"><button onclick="go('home')" class="btn btn-gold">Back Home</button><button onclick="go('questions')" class="btn border !border-white/30 !text-white">Earn More</button></div></div>`;
+updateChallengeBars();return;
+}
+quizIdx=st.done||0;quizScore=st.score||0;renderQuizQ();
+}
+function renderQuizQ(){
+const box=$('quizBox');clearInterval(quizTimer);quizLock=false;
+if(quizIdx>=5){finishQuiz();return;}
+const q=QUIZ[quizIdx];let time=60;
+box.innerHTML=`
+<div class="flex items-center gap-3"><div class="flex-1 bar !bg-white/20"><div class="bg-gold progress-anim" style="width:${quizIdx/5*100}%"></div></div><span class="text-xs font-bold whitespace-nowrap">Q ${quizIdx+1}/5</span><span id="qTimer" class="text-xs font-extrabold bg-white/15 px-2.5 py-1 rounded-full">⏱ 60s</span></div>
+<h3 class="font-extrabold text-lg md:text-xl mt-4 leading-snug">${esc(q.q)}</h3>
+<div class="space-y-2.5 mt-4">${q.o.map((o,i)=>`<button id="qo${i}" onclick="answerQuiz(${i})" class="quiz-opt !bg-white !text-ink"><span class="inline-flex w-7 h-7 rounded-full bg-surface border border-line text-xs font-extrabold items-center justify-center mr-2">${'ABCD'[i]}</span>${esc(o)}</button>`).join('')}</div>
+<div class="text-[11px] text-white/50 mt-3 text-center">Score so far: ${quizScore} • Need 3+ to win +25 pts</div>`;
+quizTimer=setInterval(()=>{time--;const t=$('qTimer');if(t)t.textContent=`⏱ ${time}s`;if(time<=0){clearInterval(quizTimer);answerQuiz(-1);}},1000);
+}
+function answerQuiz(pick){
+if(quizLock)return;quizLock=true;clearInterval(quizTimer);
+const q=QUIZ[quizIdx];const correct=q.a;
+q.o.forEach((_,i)=>{const b=$('qo'+i);if(!b)return;b.style.pointerEvents='none';if(i===correct)b.classList.add('correct');});
+if(pick===correct){quizScore++;}else if(pick>=0){const b=$('qo'+pick);if(b)b.classList.add('wrong');}
+const u=me();const key=(u?u.id:'guest')+'_'+dayKey();
+chalState[key]={done:quizIdx+1,score:quizScore,claimed:false};persist();updateChallengeBars();
+setTimeout(()=>{quizIdx++;renderQuizQ();},900);
+}
+function finishQuiz(){
+const u=me();const key=(u?u.id:'guest')+'_'+dayKey();
+const st=chalState[key]||{done:5,score:quizScore};
+st.done=5;st.claimed=true;chalState[key]=st;
+if(u&&st.score>=3){awardPoints(u.id,25,'Daily challenge reward (Quiz '+st.score+'/5)');const uu=me();if(uu){const bi=uu.badges.indexOf('quiz');if(bi<0){uu.badges.push('quiz');}}pushNotif(u.id,'challenge','Challenge won! +25 ⚡',`You scored ${st.score}/5 in today's quiz.`);persist();updateAuthUI();}
+else if(!u){toast('Log in to claim quiz rewards','info');}
+persist();renderQuiz();
+}
+
+/* ============ REPORT / INFO / NOTIFS ============ */
+function openReport(type,qid,aid){const u=me();if(!u)return openAuth('login');reportTarget={type,qid,aid};$('repDetails').value='';$('reportModal').classList.remove('hidden');}
+function submitReport(){
+const u=me();if(!u)return;if(!reportTarget)return;
+reports.unshift({id:uid('r'),...reportTarget,reason:$('repReason').value,details:$('repDetails').value.trim(),reporter:u.fullName,reporterId:u.id,date:now(),status:'Pending'});
+persist();$('reportModal').classList.add('hidden');toast('Report submitted. Moderators will review. ✓','success');
+}
+const INFOS={
+terms:{t:'Terms of Service',b:`<p><strong>1. Community:</strong> Ghana Answer & Earn rewards qualifying helpful activity — not employment or guaranteed income.</p><p class="mt-2"><strong>2. Points:</strong> 20 pts = GH₵1.00. Pending points clear after 24–48hr quality verification. Spam earns 0.</p><p class="mt-2"><strong>3. Withdrawals:</strong> Min GH₵50, max GH₵200/day, verified phone only, one request at a time. Provider fees may apply.</p><p class="mt-2"><strong>4. Conduct:</strong> No spam, scams, abuse, tribalism, or exam malpractice. Violations = removal, forfeiture, suspension.</p><p class="mt-2"><strong>5. Accounts:</strong> One account per person. Fake/bulk accounts are suspended.</p>`},
+privacy:{t:'Privacy Policy',b:`<p>We collect name, email, phone, region and activity to operate rewards, prevent fraud and process MoMo payouts.</p><p class="mt-2">We never sell your data. MoMo numbers are used only for withdrawals you request. You may request export or deletion via support@ghanaanswer.com.</p><p class="mt-2">Demo mode stores data locally in your browser (localStorage) for illustration.</p>`},
+guidelines:{t:'Community Guidelines',b:`<ul class="list-disc pl-5 space-y-1"><li>Be kind and respectful — no insults, tribalism or hate.</li><li>Give original, helpful answers (min 20 chars). No copy-paste or AI spam.</li><li>No phone numbers, scams, betting tips spam, or ads in public posts.</li><li>No exam leak requests or malpractice help.</li><li>Report abuse — moderators review quickly. Appeals via Contact.</li></ul>`},
+contact:{t:'Contact Us',b:`<p><strong>Email:</strong> support@ghanaanswer.com<br/><strong>Location:</strong> Accra, Ghana<br/><strong>Hours:</strong> Mon–Sat, 8am–8pm GMT</p><p class="mt-2">For withdrawal issues include your reference (e.g. GAE-12345) and MoMo network.</p><p class="mt-2 text-xs text-gray-400">Demo: responses are simulated.</p>`}
+};
+function openInfo(k){const i=INFOS[k];if(!i)return;$('infoTitle').textContent=i.t;$('infoBody').innerHTML=i.b;$('infoModal').classList.remove('hidden');}
+function subscribe(){const e=$('nlEmail').value.trim();if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e))return toast('Enter a valid email','error');$('nlEmail').value='';toast('Subscribed! Welcome aboard 🎉','success');}
+function pushNotif(uid_,type,title,msg){notifications.unshift({id:uid('n'),userId:uid_,type,title,msg,date:now(),read:false});persist();updateNotifBadge();}
+function updateNotifBadge(){const u=me();const c=u?notifications.filter(n=>n.userId===u.id&&!n.read).length:0;const b=$('notifBadge');if(c>0){b.textContent=c>9?'9+':c;b.classList.remove('hidden');}else b.classList.add('hidden');}
+function toggleNotifs(show){
+const w=$('notifWrap'),p=$('notifPanel');
+if(show){w.classList.remove('hidden');requestAnimationFrame(()=>p.classList.remove('translate-x-full'));renderNotifs();}
+else{p.classList.add('translate-x-full');setTimeout(()=>w.classList.add('hidden'),300);}
+}
+function renderNotifs(){
+const u=me();
+if(!u){$('notifList').innerHTML=`<div class="text-center py-12"><div class="text-4xl">🔔</div><div class="font-extrabold mt-2 text-sm">Log in to see updates</div><button onclick="toggleNotifs(false);openAuth('login')" class="btn btn-dark btn-sm mt-3">Log In</button></div>`;return;}
+const list=notifications.filter(n=>n.userId===u.id).sort((a,b)=>b.date-a.date);
+const ic={reward:'🎉',withdrawal:'💰',challenge:'⚡',referral:'👥',security:'🔒',system:'ℹ️'};
+$('notifList').innerHTML=list.length?list.map(n=>`<div class="bg-white border border-line rounded-2xl p-3.5 ${n.read?'':'!border-brand/40 !bg-brandLight/40'}"><div class="flex gap-2.5"><span class="text-xl">${ic[n.type]||'ℹ️'}</span><div class="min-w-0"><div class="font-extrabold text-[13px]">${esc(n.title)}</div><div class="text-[12px] text-muted mt-0.5">${esc(n.msg)}</div><div class="text-[11px] text-muted mt-1">${timeAgo(n.date)}</div></div>${n.read?'':'<span class="w-2.5 h-2.5 rounded-full bg-brand shrink-0 mt-1"></span>'}</div></div>`).join(''):`<div class="text-center py-12"><div class="text-4xl">🔕</div><div class="font-extrabold mt-2 text-sm">No notifications yet</div><div class="text-xs text-muted mt-1">Answers, rewards & payouts will appear here.</div></div>`;
+}
+function markAllRead(){const u=me();if(!u)return;notifications.forEach(n=>{if(n.userId===u.id)n.read=true;});persist();renderNotifs();updateNotifBadge();}
+
+/* ============ ADMIN ============ */
+function switchAdmin(t){admTab=t;document.querySelectorAll('.adm-tab').forEach(b=>b.classList.toggle('on',b.dataset.adm===t));document.querySelectorAll('.adm-panel').forEach(p=>p.classList.add('hidden'));$('adm-'+t).classList.remove('hidden');renderAdminTab();}
+function renderAdmin(){
+const u=me();
+if(!u||!u.isAdmin){$('adminGuard').classList.remove('hidden');$('adminMain').classList.add('hidden');return;}
+$('adminGuard').classList.add('hidden');$('adminMain').classList.remove('hidden');renderAdminTab();
+}
+function renderAdminTab(){
+if(admTab==='overview')renderAdmOverview();
+if(admTab==='users')renderAdmUsers();
+if(admTab==='questions')renderAdmQuestions();
+if(admTab==='reports')renderAdmReports();
+if(admTab==='withdrawals')renderAdmWds();
+if(admTab==='networks')renderAdmNetworks();
+}
+function renderAdmOverview(){
+const totalAns=questions.reduce((s,q)=>s+q.answers.length,0);
+const pendWd=withdrawals.filter(w=>w.status==='Pending').length;
+const paid=withdrawals.filter(w=>w.status==='Completed').reduce((s,w)=>s+w.amountGH,0);
+$('analyticsGrid').innerHTML=[['👥 Total Users',users.length],['❓ Questions',questions.length],['💬 Answers',totalAns],['💰 Paid Out',gh(paid)],['⏳ Pending WD',pendWd],['🚩 Open Reports',reports.filter(r=>r.status==='Pending').length],['✅ Verified',users.filter(u=>u.verified).length],['📲 Networks',networks.filter(n=>n.enabled).length]].map(([l,v])=>`<div class="card p-4"><div class="text-[11px] font-extrabold text-muted">${l.toUpperCase()}</div><div class="font-display font-extrabold text-2xl mt-1">${v}</div></div>`).join('');
+const days=[...Array(7)].map((_,i)=>{const d=new Date(Date.now()-(6-i)*864e5);const k=d.toDateString();const c=questions.filter(q=>new Date(q.date).toDateString()===k).length+transactions.filter(t=>new Date(t.date).toDateString()===k).length;return{label:'SMTWTFS'[d.getDay()]||d.toLocaleDateString('en',{weekday:'narrow'}),v:c};});
+const mx=Math.max(1,...days.map(d=>d.v));
+$('chActivity').innerHTML=`<div class="flex items-end gap-2 h-[150px] mt-2">${days.map(d=>`<div class="flex-1 flex flex-col items-center gap-1.5"><div class="w-full rounded-lg bg-brand/90" style="height:${Math.max(8,d.v/mx*110)}px"></div><span class="text-[10px] font-bold text-muted">${d.label}</span></div>`).join('')}</div>`;
+const sts=['Pending','Processing','Completed','Failed'];const counts=sts.map(s=>withdrawals.filter(w=>w.status===s).length);const tot=Math.max(1,counts.reduce((a,b)=>a+b,0));
+const cols=['#E9A706','#3B82F6','#10B981','#EF4444'];let acc=0;const grad=counts.map((c,i)=>{const from=acc/tot*360;acc+=c;const to=acc/tot*360;return `${cols[i]} ${from}deg ${to}deg`;}).join(',');
+$('chWd').innerHTML=`<div class="flex items-center gap-5 mt-2"><div class="w-[120px] h-[120px] rounded-full shrink-0" style="background:conic-gradient(${grad||'#eee 0 360deg'});mask:radial-gradient(circle,transparent 38px,#000 39px);-webkit-mask:radial-gradient(circle,transparent 38px,#000 39px)"></div><div class="space-y-1.5 text-[13px] font-bold">${sts.map((s,i)=>`<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background:${cols[i]}"></span>${s} <span class="text-muted">(${counts[i]})</span></div>`).join('')}</div></div>`;
+}
+function renderAdmUsers(){
+$('admUserRows').innerHTML=users.map(u=>`<tr class="border-b border-line"><td class="py-2.5"><div class="flex items-center gap-2"><span class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-extrabold" style="background:${u.av}">${esc(u.fullName.charAt(0))}</span><div><div class="font-extrabold">${esc(u.fullName)} ${u.isAdmin?'<span class="text-[9px] bg-ink text-white px-1.5 py-0.5 rounded-full">ADMIN</span>':''}</div><div class="text-gray-400">@${esc(u.username)}</div></div></div></td><td><div class="font-semibold">${esc(u.email)}</div><div class="text-gray-400">${esc(u.phone)}</div></td><td>${esc(u.region)}</td><td class="font-extrabold">${(u.ptsA+u.ptsP).toLocaleString()}</td><td>${u.suspended?'<span class="status status-Failed"><i></i>Suspended</span>':u.verified?'<span class="status status-Completed"><i></i>Verified</span>':'<span class="status status-Pending"><i></i>Unverified</span>'}</td><td>${u.isAdmin?'—':`<button onclick="toggleSuspend('${u.id}')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full ${u.suspended?'bg-brandLight text-brand':'bg-red-50 text-danger border border-red-200'}">${u.suspended?'Unsuspend':'Suspend'}</button>`}</td></tr>`).join('');
+}
+function toggleSuspend(id){const u=users.find(x=>x.id===id);if(!u||u.isAdmin)return;u.suspended=!u.suspended;persist();renderAdmUsers();toast(u.suspended?'User suspended':'User unsuspended','info');}
+function renderAdmQuestions(){
+$('admQList').innerHTML=questions.map(q=>`<div class="bg-surface border border-line rounded-2xl p-3 flex items-center gap-3"><div class="flex-1 min-w-0"><div class="font-bold text-[13px] truncate">${esc(q.title)}</div><div class="text-[11px] text-muted">${esc(q.category)} • 💬${q.answers.length} • 👁${q.views} ${q.featured?'• ⭐ Featured':''}</div></div><button onclick="toggleFeature('${q.id}')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-white border border-line">${q.featured?'Unfeature':'Feature'}</button><button onclick="deleteQuestion('${q.id}')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-red-50 text-danger border border-red-200">Delete</button></div>`).join('')||'<div class="text-sm text-muted text-center py-6">No questions.</div>';
+}
+function toggleFeature(id){const q=questions.find(x=>x.id===id);q.featured=!q.featured;persist();renderAdmQuestions();}
+function deleteQuestion(id){if(!confirm('Delete this question and its answers?'))return;questions=questions.filter(q=>q.id!==id);persist();renderAdmQuestions();toast('Question deleted','info');}
+function renderAdmReports(){
+$('admReports').innerHTML=reports.length?reports.map(r=>`<div class="bg-surface border border-line rounded-2xl p-3"><div class="flex items-center justify-between gap-2"><strong class="text-[13px]">${esc(r.reason)}</strong><span class="status status-${r.status==='Pending'?'Pending':'Completed'}"><i></i>${r.status}</span></div><div class="text-[12px] text-muted mt-1">${r.type} • by ${esc(r.reporter)} • ${timeAgo(r.date)}</div>${r.details?`<div class="text-[12px] mt-1">“${esc(r.details)}”</div>`:''}${r.status==='Pending'?`<div class="flex gap-2 mt-2"><button onclick="resolveReport('${r.id}','dismiss')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-white border border-line">Dismiss</button><button onclick="resolveReport('${r.id}','remove')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-red-50 text-danger border border-red-200">Remove content</button></div>`:''}</div>`).join(''):'<div class="text-sm text-muted text-center py-6">🎉 No reports. Community is healthy!</div>';
+}
+function resolveReport(id,act){
+const r=reports.find(x=>x.id===id);if(!r)return;
+if(act==='remove'){if(r.type==='question'){questions=questions.filter(q=>q.id!==r.qid);}else{const q=questions.find(x=>x.id===r.qid);if(q)q.answers=q.answers.filter(a=>a.id!==r.aid);}}
+r.status=act==='dismiss'?'Dismissed':'Actioned';persist();renderAdmReports();toast('Report resolved ✓','success');
+}
+function renderAdmWds(){
+const list=[...withdrawals].sort((a,b)=>b.date-a.date);
+$('admWdList').innerHTML=list.length?list.map(w=>{const u=users.find(x=>x.id===w.userId);return `<div class="bg-surface border border-line rounded-2xl p-3"><div class="flex items-center justify-between flex-wrap gap-2"><div><strong class="text-sm">${gh(w.amountGH)}</strong> <span class="text-[12px] text-muted">• ${esc(u?u.fullName:'Unknown')} • ${esc(w.network)} ••${esc(w.number.slice(-4))}</span><div class="text-[11px] font-mono text-muted">${esc(w.ref)} • ${timeAgo(w.date)}</div></div><span class="status status-${w.status}"><i></i>${w.status}</span></div>${(w.status==='Pending'||w.status==='Processing')?`<div class="flex gap-2 mt-2 flex-wrap">${w.status==='Pending'?`<button onclick="handleWd('${w.id}','Processing')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-blue-100 text-blue-800">Mark Processing</button>`:''}<button onclick="handleWd('${w.id}','Completed')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-brand text-white">Approve ✓</button><button onclick="handleWd('${w.id}','Failed')" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full bg-red-50 text-danger border border-red-200">Reject + Refund</button></div>`:''}</div>`;}).join(''):'<div class="text-sm text-muted text-center py-6">No withdrawal requests.</div>';
+}
+function handleWd(id,st){
+const w=withdrawals.find(x=>x.id===id);if(!w)return;const u=users.find(x=>x.id===w.userId);
+w.status=st;const tx=transactions.find(t=>t.ref===w.ref);if(tx)tx.status=st;
+if(st==='Completed'&&u){u.totalGH+=w.amountGH;pushNotif(u.id,'withdrawal','Withdrawal Completed ✓',`${gh(w.amountGH)} sent to ${w.network}. Ref ${w.ref}.`);}
+if(st==='Failed'&&u){u.ptsA+=w.pts;pushNotif(u.id,'withdrawal','Withdrawal Failed',`${gh(w.amountGH)} refunded to Available. Check MoMo details. Ref ${w.ref}.`);}
+if(st==='Processing'&&u){pushNotif(u.id,'withdrawal','Withdrawal Processing ⏳',`${gh(w.amountGH)} is being processed. Ref ${w.ref}.`);}
+persist();renderAdmWds();toast('Withdrawal '+st,'success');
+}
+function renderAdmNetworks(){
+$('netList').innerHTML=networks.map((n,i)=>`<div class="flex items-center gap-3 bg-surface border border-line rounded-2xl p-3"><span class="text-[11px] font-extrabold px-2.5 py-1 rounded-md" style="background:${n.color};color:${n.tcolor}">${n.code}</span><span class="font-bold text-[13px] flex-1">${n.name}</span><button onclick="toggleNet(${i})" class="text-[11px] font-extrabold px-3 py-1.5 rounded-full ${n.enabled?'bg-brandLight text-brand':'bg-gray-200 text-muted'}">${n.enabled?'Enabled':'Disabled'}</button></div>`).join('');
+$('cfgMin').value=cfg.min;$('cfgMax').value=cfg.max;
+}
+function toggleNet(i){networks[i].enabled=!networks[i].enabled;persist();renderAdmNetworks();}
+function saveNetConfig(){cfg.min=Math.max(1,parseInt($('cfgMin').value||50));cfg.max=Math.max(cfg.min,parseInt($('cfgMax').value||200));persist();toast('Configuration saved ✓','success');}
+
+/* ============ INIT ============ */
+function init(){
+seed();
+$('rgRegion').innerHTML='<option value="">Select region</option>'+REGIONS.map(r=>`<option>${r}</option>`).join('');
+$('rgNetwork').innerHTML=networks.filter(n=>n.enabled).map(n=>`<option>${n.name}</option>`).join('');
+$('askCat').innerHTML=CATS.map(([n])=>`<option>${n}</option>`).join('');
+updateAuthUI();renderHome();renderAskStats();
+}
+init();
+</script>
+</body>
+</html>
